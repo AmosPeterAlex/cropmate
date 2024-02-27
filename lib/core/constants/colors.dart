@@ -8,5 +8,4 @@ class MyColors {
   static const Color iconColor = Color(0XFF374957);//DOUBT
   static const Color myRed =Color(0XFFB80000);//red
 
-
 }
