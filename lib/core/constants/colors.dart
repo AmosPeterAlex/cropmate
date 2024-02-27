@@ -7,4 +7,5 @@ class MyColors {
   static const Color bgColor = Color(0xFFFFC107);//yellow
   static const Color iconColor = Color(0XFF374957);//DOUBT
 
+
 }
