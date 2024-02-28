@@ -7,4 +7,5 @@ class ColorConstants {
   static const Color blackColor = Color(0xFF000000); //black
   static const Color iconColor = Color(0XFF374957); //DOUBT
   static const Color redColor = Color(0XFFB80000); //red
+  static const Color textFieldFillColor = Color(0xfff8f8f9); //slight grey white
 }

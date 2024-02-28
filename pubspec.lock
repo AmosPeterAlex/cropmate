@@ -106,7 +106,7 @@ packages:
       sha256: a6e590c838b18133bb482a2745ad77c5bb7715fb0451209e1a7567d416678b8e
       url: "https://pub.dev"
     source: hosted
-    version: "1.11.0"
+    version: "1.10.0"
   nested:
     dependency: transitive
     description:
@@ -122,7 +122,7 @@ packages:
       sha256: "8829d8a55c13fc0e37127c29fedf290c102f4e40ae94ada574091fe0ff96c917"
       url: "https://pub.dev"
     source: hosted
-    version: "1.9.0"
+    version: "1.8.3"
   provider:
     dependency: "direct main"
     description:
