@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class MaterialButtonWidget extends StatelessWidget {
   final String? buttonText;
   final Color? buttonColor;
-
   MaterialButtonWidget({super.key, this.buttonText, this.buttonColor});
 
   @override
