@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'bottom_navigation_screen/controller/bottom_navigation_controller.dart';
 import 'bottom_navigation_screen/view/bottom_navigation_screen.dart';
+import 'farmer_registration_screen/view/farmer_registration_screen.dart';
 
 void main() {
   runApp(const MyApp());

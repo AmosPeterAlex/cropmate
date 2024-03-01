@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
           ),
           centerTitle: true,
           bottom: const TabBar(
-            tabs: <Widget>[
+            tabs: [
               Tab(
                 icon: Icon(Icons.manage_accounts_outlined),
                 text: 'Management',
