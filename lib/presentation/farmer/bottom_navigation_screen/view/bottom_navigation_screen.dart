@@ -44,13 +44,13 @@ class BottomNavigationScreen extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             activeIcon: Icon(
-              Icons.upload_file,
+              Icons.qr_code_scanner_outlined,
               color: ColorConstants.primaryColor,
               size: devHeight*0.03,
             ),
-            icon: Icon(Icons.favorite_border_outlined,
+            icon: Icon(Icons.qr_code_scanner_outlined,
                 color: ColorConstants.iconColor, size: 25),
-            label: "Favorite",
+            label: "Scanner",
           ),
           BottomNavigationBarItem(
               activeIcon: Icon(
@@ -69,7 +69,7 @@ class BottomNavigationScreen extends StatelessWidget {
         currentIndex: mainProvider.selectedIndex,
         selectedItemColor: ColorConstants.primaryColor,
       ),
-      // body: screen[index],
+       body: mainProvider.myPages[mainProvider.selectedIndex],
     );
   }
 }
