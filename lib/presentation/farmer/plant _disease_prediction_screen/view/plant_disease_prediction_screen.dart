@@ -1,12 +1,10 @@
 import 'package:cropmate/core/constants/color_constants.dart';
-import 'package:cropmate/global_widgets/matterial_button_widget.dart';
-import 'package:cropmate/global_widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
 
 
-class AddHarvestedItemScreen extends StatelessWidget {
-  const AddHarvestedItemScreen({super.key});
+class PlantDiseasePredictionScreen extends StatelessWidget {
+  const PlantDiseasePredictionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,21 +12,23 @@ class AddHarvestedItemScreen extends StatelessWidget {
     var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add harvested item"),
+        title: Text("Plant Disease Prediction"),
         centerTitle: true,
       ),
       body: SafeArea(
-        minimum: EdgeInsets.only(top: devHeight * 0.04),
+        minimum: EdgeInsets.only(top: devHeight * 0.02),
         child: ListView(
-          padding:
-              EdgeInsets.only(left: devWidth * 0.02, right: devWidth * 0.02),
           children: [
-            TextFieldScreen(hintText: "Created by"),
-            TextFieldScreen(hintText: "Crop type"),
-            TextFieldScreen(hintText: "Crop name"),
             ListTile(
-              title: Text("Add image"),
+              title: Text(
+                "Add image",
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.normal,
+                    color: ColorConstants.blackColor),
+              ),
             ),
+            SizedBox(height: devHeight*0.02,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -41,13 +41,13 @@ class AddHarvestedItemScreen extends StatelessWidget {
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10))),
                           backgroundColor:
-                              MaterialStatePropertyAll(Color(0xFFd6ebdc))),
+                          MaterialStatePropertyAll(Color(0xFFd6ebdc))),
                       onPressed: () {},
                       icon:
-                          Icon(Icons.camera_alt_outlined, color: Colors.black),
+                      Icon(Icons.camera_alt_outlined, color:  ColorConstants.blackColor),
                       label: Text(
                         'Camera',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color:  ColorConstants.blackColor),
                       )),
                 ),
                 SizedBox(
@@ -59,38 +59,19 @@ class AddHarvestedItemScreen extends StatelessWidget {
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10))),
                           backgroundColor:
-                              MaterialStatePropertyAll(Color(0xFFd6ebdc))),
+                          MaterialStatePropertyAll(Color(0xFFd6ebdc))),
                       // onPressed: () =>
                       //     upload("gallery"),
                       onPressed: () {},
-                      icon: Icon(Icons.photo, color: Colors.black),
+                      icon: Icon(Icons.photo, color:  ColorConstants.blackColor),
                       label: Text('Gallery',
-                          style: TextStyle(color: Colors.black))),
+                          style: TextStyle(color:  ColorConstants.blackColor))),
                 ),
               ],
             ),
-            TextFieldScreen(hintText: "Price"),
-            TextFieldScreen(hintText: "Quantity"),
-            TextFieldScreen(
-              hintText: "Description",
-            ),
-            TextFieldScreen(hintText: "Is available"),
-            MaterialButtonWidget(
-              buttonText: "Add",
-              buttonColor: ColorConstants.primaryColor,
-            )
           ],
         ),
       ),
     );
   }
 }
-/*
-/// Todo
-material button modification, textfield modification
-image add akumbol ulla space
-
-
-
-
- */
