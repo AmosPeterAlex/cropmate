@@ -1,6 +1,9 @@
 import 'package:cropmate/global_widgets/admin_widgets/management_card.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/color_constants.dart';
+import '../../../../global_widgets/admin_widgets/details_bottom_sheet.dart';
+
 class FarmerManagementScreen extends StatelessWidget {
   const FarmerManagementScreen({super.key});
 
@@ -13,9 +16,22 @@ class FarmerManagementScreen extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (context, index) => ManagementCard(
-          name: 'Farmer NAme',
+          name: 'Farmer Name',
           phoneNumber: '9633780485',
-          onCardClick: () {},
+          onCardClick: () {
+            showModalBottomSheet(
+                backgroundColor: ColorConstants.lightGreenColor,
+                context: context,
+                builder: (BuildContext context) {
+                  return DetailsBottomSheet(
+                    name: '',
+                    phoneNumber: '',
+                    location: '',
+                    email: '',
+                    address: '',
+                  );
+                });
+          },
         ),
       ),
     );

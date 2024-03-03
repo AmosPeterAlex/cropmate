@@ -1,5 +1,8 @@
+import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/admin_widgets/management_card.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../global_widgets/admin_widgets/details_bottom_sheet.dart';
 
 class UserManagementScreen extends StatelessWidget {
   const UserManagementScreen({super.key});
@@ -17,7 +20,18 @@ class UserManagementScreen extends StatelessWidget {
           name: 'UserName',
           phoneNumber: '9633780485',
           onCardClick: () {
-            print('more details');
+            showModalBottomSheet(
+                backgroundColor: ColorConstants.lightGreenColor,
+                context: context,
+                builder: (BuildContext context) {
+                  return DetailsBottomSheet(
+                    name: '',
+                    phoneNumber: '',
+                    location: '',
+                    email: '',
+                    address: '',
+                  );
+                });
           },
         ),
       ),
