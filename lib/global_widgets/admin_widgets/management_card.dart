@@ -1,3 +1,4 @@
+import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
 class ManagementCard extends StatelessWidget {
@@ -20,6 +21,7 @@ class ManagementCard extends StatelessWidget {
       child: SizedBox(
         height: devHeight * .1,
         child: Card(
+          color: ColorConstants.lightGreenColor,
           child: ListTile(
             onTap: onCardClick,
             title: Text('Name: $name'),
