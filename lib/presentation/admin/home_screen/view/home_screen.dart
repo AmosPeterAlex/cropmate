@@ -1,5 +1,13 @@
 import 'package:cropmate/core/constants/image_constants.dart';
+import 'package:cropmate/global_widgets/admin_widgets/management_grid.dart';
+import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
+import 'package:cropmate/presentation/admin/agr_eqp_management_screen/view/agr_eqp_management_screen.dart';
+import 'package:cropmate/presentation/admin/farmer_management_screen/view/farmer_management_screen.dart';
+import 'package:cropmate/presentation/admin/govt_scheme_management_screen/view/govt_scheme_management_screen.dart';
+import 'package:cropmate/presentation/admin/user_management_screen/view/user_management_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/constants/color_constants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,95 +19,89 @@ class HomeScreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: AppBar(toolbarHeight: devWidth*.12,
-          title: Column(
-            children: [
-              SizedBox(
-                  height: devHeight * .1,
-                  width: devWidth * .1,
-                  child: Image.asset(ImageConstants.appIcon)),
-              Text('CropMate'),
-            ],
-          ),
+        appBar: AppBar(
+          toolbarHeight: devWidth * .2,
+          title: CropMateIconWidget(),
           centerTitle: true,
-          bottom: const TabBar(
+          bottom: TabBar(
+            physics: BouncingScrollPhysics(),
+            labelColor: ColorConstants.primaryColor,
+            unselectedLabelColor: ColorConstants.iconColor,
+            indicatorColor: ColorConstants.primaryColor,
+            overlayColor:
+                MaterialStatePropertyAll(ColorConstants.lightGreenColor),
             tabs: [
               Tab(
-                icon: Icon(Icons.manage_accounts_outlined),
-                text: 'Management',
+                icon: Icon(
+                  Icons.manage_accounts_outlined,
+                ),
+                text: 'Management', //blue color matenm
               ),
               Tab(
                 icon: Icon(Icons.feedback),
                 text: 'FeedBack',
               ),
-              // Tab(
-              //   icon: Icon(Icons.brightness_5_sharp),
-              // ),
             ],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Center(
-              child: Text("Management"),
+            Column(
+              children: [
+                SizedBox(
+                  height: devHeight * .06,
+                ),
+                Expanded(
+                  child: GridView.count(
+                    childAspectRatio: .8,
+                    crossAxisCount: 2,
+                    children: [
+                      ManagementGrid(
+                        onGridTapped: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UserManagementScreen())),
+                        imagePath: ImageConstants.userIcon,
+                        title: 'User',
+                      ),
+                      ManagementGrid(
+                        onGridTapped: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    FarmerManagementScreen())),
+                        imagePath: ImageConstants.farmerIcon,
+                        title: 'Farmer',
+                      ),
+                      ManagementGrid(
+                        onGridTapped: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    GovtSchemeManagementScreen())),
+                        imagePath: ImageConstants.govtIcon,
+                        title: 'Govt Scheme',
+                      ),
+                      ManagementGrid(
+                        onGridTapped: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    AgrEqpManagementScreen())),
+                        imagePath: ImageConstants.agrEqpIcon,
+                        title: 'Agricultural equipment',
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             Center(
               child: Text("Feedback"),
             ),
-            // Center(
-            //   child: Text("It's sunny here"),
-            // ),
           ],
         ),
       ),
     );
   }
 }
-
-/*
-
-class TabBarExample extends StatelessWidget {
-  const TabBarExample({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      initialIndex: 1,
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('TabBar Sample'),
-          bottom: const TabBar(
-            tabs: <Widget>[
-              Tab(
-                icon: Icon(Icons.cloud_outlined),
-              ),
-              Tab(
-                icon: Icon(Icons.beach_access_sharp),
-              ),
-              Tab(
-                icon: Icon(Icons.brightness_5_sharp),
-              ),
-            ],
-          ),
-        ),
-        body: const TabBarView(
-          children: <Widget>[
-            Center(
-              child: Text("It's cloudy here"),
-            ),
-            Center(
-              child: Text("It's rainy here"),
-            ),
-            Center(
-              child: Text("It's sunny here"),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
- */

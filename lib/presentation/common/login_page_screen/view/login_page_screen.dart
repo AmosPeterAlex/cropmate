@@ -1,10 +1,9 @@
-
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/core/constants/image_constants.dart';
+import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
 import 'package:flutter/material.dart';
-
 
 class LoginPageScreen extends StatelessWidget {
   const LoginPageScreen({super.key});
@@ -21,40 +20,7 @@ class LoginPageScreen extends StatelessWidget {
             child: Column(
               //Listview deleted-thought it was not necessary
               children: [
-                Stack(children: [
-                  SizedBox(
-                    height: devHeight * .2,
-                    width: devWidth * .2,
-                    child: Image.asset(ImageConstants.appIcon),
-                  ),
-                  Positioned(
-                    bottom: devHeight * .05,
-                    child: RichText(
-                      text: TextSpan(
-                        style: TextStyle(
-                            color: ColorConstants.blackColor, fontSize: 16),
-                        children: [
-                          TextSpan(
-                            text: "\tCrop",
-                            style: TextStyle(letterSpacing: .5),
-                          ),
-                          WidgetSpan(
-                            alignment: PlaceholderAlignment.middle,
-                            child: Text(
-                              'Mate',
-                              style: TextStyle(
-                                  fontStyle: FontStyle.italic,
-                                  color: ColorConstants.redColor,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: .3),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                ]),
+                CropMateIconWidget(),//refactored widget, stack oke used
                 ListTile(
                   leading: Text(
                     "Log in",
@@ -105,9 +71,6 @@ class LoginPageScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // SizedBox(
-                //   height: devHeight * .18,
-                // ),
                 //TODO anuvind materialbutton widget add akiy karinnj edit akam
                 Text(
                   'Create Account as Farmer',
