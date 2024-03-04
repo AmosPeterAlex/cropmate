@@ -1,4 +1,5 @@
 import 'package:cropmate/core/constants/image_constants.dart';
+import 'package:cropmate/global_widgets/admin_widgets/feedback_card.dart';
 import 'package:cropmate/global_widgets/admin_widgets/management_grid.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/presentation/admin/agr_eqp_management_screen/view/agr_eqp_management_screen.dart';
@@ -43,6 +44,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
+          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
         ),
         body: TabBarView(
           children: [
@@ -96,8 +98,42 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Center(
-              child: Text("Feedback"),
+            SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  FeedbackCard(
+                    name: 'User Name',
+                    product: 'Product',
+                    feedback: ' bla bla bla bla bla bla bla ',
+                  ),
+                  FeedbackCard(
+                    name: 'User Name',
+                    product: 'Product',
+                    feedback: ' bla bla bla bla bla bla bla ',
+                  ),
+                  FeedbackCard(
+                    name: 'User Name',
+                    product: 'Product',
+                    feedback: ' bla bla bla bla bla bla bla ',
+                  ),
+                  FeedbackCard(
+                    name: 'User Name',
+                    product: 'Product',
+                    feedback: ' bla bla bla bla bla bla bla ',
+                  ),
+                  FeedbackCard(
+                    name: 'User Name',
+                    product: 'Product',
+                    feedback: ' bla bla bla bla bla bla bla ',
+                  ),
+                  FeedbackCard(
+                    name: 'User Name',
+                    product: 'Product',
+                    feedback: ' bla bla bla bla bla bla bla ',
+                  ),
+                ],
+              ),
             ),
           ],
         ),

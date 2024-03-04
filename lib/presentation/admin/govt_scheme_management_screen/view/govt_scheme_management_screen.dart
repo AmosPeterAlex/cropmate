@@ -1,3 +1,4 @@
+import 'package:cropmate/global_widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
 class GovtSchemeManagementScreen extends StatelessWidget {
@@ -8,6 +9,31 @@ class GovtSchemeManagementScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Govt Scheme Management'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            TextFieldScreen(
+              hintText: 'Scheme Name',
+            ),
+            Row(
+              children: [
+                Expanded(
+                    child: TextFieldScreen(
+                  hintText: 'Start age',
+                  keyBoardType: TextInputType.number,
+                )),
+                Expanded(
+                    child: TextFieldScreen(
+                  hintText: 'Stop age',
+                  keyBoardType: TextInputType.number,
+                )),
+              ],
+            ),
+            TextFieldScreen(hintText: 'Description', maxLines: 5),
+            TextFieldScreen(hintText: 'Link')
+          ],
+        ),
       ),
     );
   }
