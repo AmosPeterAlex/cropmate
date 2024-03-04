@@ -6,6 +6,7 @@ class TextFieldScreen extends StatelessWidget {
   final Color? iconColour;
   final FontWeight? fontModal;
   final String hintText;
+  final TextInputType? keyBoardType;
   final Icon? prefixIcon;
   final int? maxLines;
 
@@ -16,6 +17,7 @@ class TextFieldScreen extends StatelessWidget {
       this.suffixIcon,
       this.iconColour,
       this.fontModal,
+      this.keyBoardType,
       required this.hintText,
       this.maxLines});
 
@@ -24,6 +26,7 @@ class TextFieldScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: TextFormField(
+          keyboardType: keyBoardType,
           maxLines: maxLines,
           decoration: InputDecoration(
               border:
