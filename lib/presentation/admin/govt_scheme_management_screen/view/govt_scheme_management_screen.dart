@@ -1,3 +1,5 @@
+import 'package:cropmate/core/constants/color_constants.dart';
+import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +33,11 @@ class GovtSchemeManagementScreen extends StatelessWidget {
               ],
             ),
             TextFieldScreen(hintText: 'Description', maxLines: 5),
-            TextFieldScreen(hintText: 'Link')
+            TextFieldScreen(hintText: 'Link'),
+            MaterialButtonWidget(
+                buttonText: 'Add Scheme',
+                onPressed: () {},
+                buttonColor: ColorConstants.primaryColor)
           ],
         ),
       ),
