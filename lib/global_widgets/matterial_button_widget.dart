@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class MaterialButtonWidget extends StatelessWidget {
   final String? buttonText;
   final Color? buttonColor;
-
-  MaterialButtonWidget({super.key, this.buttonText, this.buttonColor});
+  final VoidCallback? onPressed;
+  MaterialButtonWidget({super.key, this.buttonText, this.buttonColor, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class MaterialButtonWidget extends StatelessWidget {
         height: devHeight * .06,
         minWidth: devWidth,
         color: buttonColor,
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           buttonText!,
           style: TextStyle(fontSize: devHeight * .03, color: Colors.white),

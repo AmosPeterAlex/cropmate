@@ -1,4 +1,5 @@
 import 'package:cropmate/core/constants/color_constants.dart';
+import 'package:cropmate/core/constants/image_constants.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,11 +19,7 @@ class UserRegistrationScreen extends StatelessWidget {
             Column(
               children: [
                 ListTile(
-                    title: Icon(
-                  CupertinoIcons.tree,
-                  size: devHeight * .07,
-                  color: ColorConstants.iconColor,
-                )),
+                    title: Image.asset(ImageConstants.appIcon)),
                 ListTile(
                   title: Text(
                     "Sign Up",
