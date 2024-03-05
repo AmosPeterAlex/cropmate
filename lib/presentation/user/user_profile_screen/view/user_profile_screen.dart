@@ -1,10 +1,10 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/farmer_widgets/Profile_listtile.dart';
-import 'package:cropmate/presentation/admin/govt_scheme_management_screen/view/govt_scheme_management_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../../common/govt_scheme_screen/view/govt_scheme_screen.dart';
 import '../../../farmer/Update_profile_screen/view/update_profile_screen.dart';
 
 class UserProfileScreen extends StatelessWidget {
@@ -37,7 +37,7 @@ class UserProfileScreen extends StatelessWidget {
             text: "Government schemes information",
             icon: Icon(Icons.view_agenda),
             onTileClick: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => GovtSchemeManagementScreen())),
+                MaterialPageRoute(builder: (context) => GovtSchemeScreen())),
           ),
           // ProfileListTile(
           //   text: "Soil Analysis and Crop Recommendation",
