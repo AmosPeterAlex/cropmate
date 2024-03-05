@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/constants/color_constants.dart';
+import '../../../../global_widgets/matterial_button_widget.dart';
 import '../../../../global_widgets/textfield.dart';
 
 class AgrEqpManagementScreen extends StatelessWidget {
@@ -17,7 +19,11 @@ class AgrEqpManagementScreen extends StatelessWidget {
           TextFieldScreen(hintText: 'Photo',maxLines: 4,),
           TextFieldScreen(hintText: 'Price'),
           TextFieldScreen(hintText: 'Quantity'),
-          TextFieldScreen(hintText: 'Brand')
+          TextFieldScreen(hintText: 'Brand'),
+          MaterialButtonWidget(
+              buttonText: 'Add Equipment',
+              onPressed: () {},
+              buttonColor: ColorConstants.primaryColor)
         ],
       ),
     ),
