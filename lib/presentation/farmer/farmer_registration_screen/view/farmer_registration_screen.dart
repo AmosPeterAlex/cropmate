@@ -2,10 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/color_constants.dart';
-import '../../../../core/constants/image_constants.dart';
+
+import '../../../../global_widgets/crop_mate_icon_widget.dart';
 import '../../../../global_widgets/matterial_button_widget.dart';
 import '../../../../global_widgets/textfield.dart';
-
+void main(){
+  runApp(MaterialApp(home:FarmerRegistrationScreen() ,));
+}
 class FarmerRegistrationScreen extends StatelessWidget {
   const FarmerRegistrationScreen({super.key});
 
@@ -19,12 +22,8 @@ class FarmerRegistrationScreen extends StatelessWidget {
           child: ListView(children: [
             Column(
               children: [
-                ListTile(
-                    title:  Container(
-                      height: devHeight * .35,
-                      width: devWidth * .35,
-                      child: Image.asset(ImageConstants.appIcon),
-                    ),),
+                CropMateIconWidget(),//refactored widget, stack oke used
+
                 ListTile(
                   title: Text(
                     "Sign Up",
