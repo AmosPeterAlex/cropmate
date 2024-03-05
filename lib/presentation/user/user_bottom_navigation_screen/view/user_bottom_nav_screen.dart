@@ -55,7 +55,7 @@ class UserBottomNavScreen extends StatelessWidget {
         currentIndex: mainProvider.selectedIndex,
         selectedItemColor: ColorConstants.primaryColor,
       ),
-      // body: mainProvider.myPages[mainProvider.selectedIndex],
+      body: mainProvider.myPages[mainProvider.selectedIndex],
     );
   }
 }

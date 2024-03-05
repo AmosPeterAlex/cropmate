@@ -13,22 +13,22 @@ class UserHarvestedItemScreen extends StatelessWidget {
     var devWidth = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
-            title: CropMateIconWidget(),
-            centerTitle: true,
-            toolbarHeight: devHeight * .1,
-            actions: [
-              IconButton(
-                  onPressed: () {}, icon: Icon(CupertinoIcons.cart_badge_plus))
-            ],
-          ),
+          // appBar: AppBar(
+          //   title: CropMateIconWidget(),
+          //   centerTitle: true,
+          //   toolbarHeight: devHeight * .1,
+          //   actions: [
+          //     IconButton(
+          //         onPressed: () {}, icon: Icon(CupertinoIcons.cart_badge_plus))
+          //   ],
+          // ),
           body: Padding(
             padding:  EdgeInsets.all(devHeight*0.01),
             child: GridView.builder(
                 itemCount: 12,
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: .65,
+                    childAspectRatio: .58,
                     crossAxisCount: 2,
                     crossAxisSpacing: devHeight *.008,
                     mainAxisSpacing: devWidth * 0.02),
