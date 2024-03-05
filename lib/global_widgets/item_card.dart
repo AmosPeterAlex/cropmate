@@ -1,5 +1,7 @@
-
+import 'package:cropmate/core/constants/color_constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({
@@ -23,11 +25,13 @@ class ItemCard extends StatelessWidget {
     var devWidth = MediaQuery.of(context).size.width;
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: Colors.green),
+          borderRadius: BorderRadius.circular(10),
+          color: ColorConstants.lightGreenColor),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(height: devHeight*0.2,
+          Container(
+            height: devHeight * 0.2,
             decoration: BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.circular(10),
@@ -38,29 +42,46 @@ class ItemCard extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Column(crossAxisAlignment: CrossAxisAlignment.center,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "title",
-                style: TextStyle(fontSize: devHeight*0.02,fontWeight: FontWeight.w600),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Text(
+                  "title",
+                  style: TextStyle(
+                      fontSize: devHeight * 0.02, fontWeight: FontWeight.w600),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                      "Price/"
-                  ),
+                  Text("Price/"),
                   Text(
                     "Quantity",
                   ),
                 ],
               ),
-              Text(
-                "from",
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Text(
+                  "Description",
+                ),
               ),
-              MaterialButton(onPressed: (){},child: Text("ADD TO CART"),)
-
+              SingleChildScrollView(
+                child: Text(
+                  "from",
+                ),
+              scrollDirection: Axis.horizontal,),
+              MaterialButton(
+                color: ColorConstants.primaryColor,
+                onPressed: () {},
+                child: Text(
+                  "ADD TO CART",
+                  style: TextStyle(color: ColorConstants.whiteColor),
+                ),
+              ),
             ],
           )
         ],
