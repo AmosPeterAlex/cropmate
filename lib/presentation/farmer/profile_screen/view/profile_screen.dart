@@ -1,4 +1,5 @@
 import 'package:cropmate/core/constants/color_constants.dart';
+import 'package:cropmate/presentation/common/govt_scheme_screen/view/govt_scheme_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../Update_profile_screen/view/update_profile_screen.dart';
@@ -30,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
           () => Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => UpdateProfileScreen())),
           () => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => UpdateProfileScreen())),
+          .push(MaterialPageRoute(builder: (context) => GovtSchemeScreen())),
           () => Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => UpdateProfileScreen())),
           () => Navigator.of(context)
