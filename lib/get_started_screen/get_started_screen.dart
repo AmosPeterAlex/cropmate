@@ -1,3 +1,4 @@
+import 'package:cropmate/presentation/admin/home_screen/view/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedScreen extends StatelessWidget {
@@ -15,9 +16,14 @@ class GetStartedScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(height: 60,
-              width: double.infinity,
-              color: Colors.amber,),SizedBox(height: 20,),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) =>HomeScreen() ,));
+                },
+                child: Container(height: 60,
+                width: double.infinity,
+                color: Colors.amber,),
+              ),SizedBox(height: 20,),
               Container(height: 60,
               width: double.infinity,
               color: Colors.amber,),SizedBox(height: 20,),
