@@ -64,12 +64,6 @@ class ItemCard extends StatelessWidget {
                 ],
               ),
               SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Text(
-                  "Description",
-                ),
-              ),
-              SingleChildScrollView(
                 child: Text(
                   "from",
                 ),

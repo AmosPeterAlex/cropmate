@@ -1,5 +1,16 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-class UserHarvestedItemScreenConteoller extends ChangeNotifier{
+class UserHarvestedItemScreenController extends ChangeNotifier {
+  List<String> categorylist = [
+    "Vegitable",
+    "Fruits",
+    "Grains"
+  ];
+  String category = "Vegitables";
 
+  onTap({required index}) {
+    category = categorylist[index].toLowerCase();
+    print(category);
+    notifyListeners();
+  }
 }

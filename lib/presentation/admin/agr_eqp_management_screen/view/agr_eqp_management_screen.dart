@@ -12,21 +12,22 @@ class AgrEqpManagementScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Agr Equip Management'),
-      ), body: Center(
-      child: Column(
-        children: [
-          TextFieldScreen(hintText: 'Equipment Name'),
-          TextFieldScreen(hintText: 'Photo',maxLines: 4,),
-          TextFieldScreen(hintText: 'Price'),
-          TextFieldScreen(hintText: 'Quantity'),
-          TextFieldScreen(hintText: 'Brand'),
-          MaterialButtonWidget(
-              buttonText: 'Add Equipment',
-              onPressed: () {},
-              buttonColor: ColorConstants.primaryColor)
-        ],
       ),
-    ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            TextFieldScreen(hintText: 'Equipment Name'),
+            // TextFieldScreen(hintText: 'Photo',maxLines: 4,),TODO photo de add akenm
+            TextFieldScreen(hintText: 'Price'),
+            TextFieldScreen(hintText: 'Quantity'),
+            TextFieldScreen(hintText: 'Brand'),
+            MaterialButtonWidget(
+                buttonText: 'Add Equipment',
+                onPressed: () {},
+                buttonColor: ColorConstants.primaryColor)
+          ],
+        ),
+      ),
     );
   }
 }

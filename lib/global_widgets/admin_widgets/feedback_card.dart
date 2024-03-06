@@ -22,7 +22,8 @@ class FeedbackCard extends StatelessWidget {
         height: devHeight * .14,
         child: Card(
             color: ColorConstants.lightGreenColor,
-            child: ListView(physics: NeverScrollableScrollPhysics(),
+            child: ListView(
+              physics: NeverScrollableScrollPhysics(),
               padding: EdgeInsets.all(10),
               children: [
                 Text('Name: $name'),
