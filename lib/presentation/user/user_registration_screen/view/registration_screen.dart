@@ -51,3 +51,7 @@ class UserRegistrationScreen extends StatelessWidget {
     );
   }
 }
+
+class apiservice{
+
+}

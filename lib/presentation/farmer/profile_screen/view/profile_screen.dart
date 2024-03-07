@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../../common/govt_scheme_screen/view/govt_scheme_screen.dart';
 import '../../Update_profile_screen/view/update_profile_screen.dart';
 import '../../soil_analysis_Screen/view/soil_analysis_screen.dart';
 
@@ -38,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
             text: "Government schemes information",
             icon: Icon(Icons.view_agenda),
             onTileClick: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => UpdateProfileScreen())),
+                MaterialPageRoute(builder: (context) => GovtSchemeScreen())),
           ),
           ProfileListTile(
             text: "Soil Analysis and Crop Recommendation",

@@ -20,7 +20,7 @@ class UserHarvestedItemScreen extends StatelessWidget {
         length: provider.categorylist.length,
         initialIndex: 0,
         child: Scaffold(
-            appBar: AppBar(centerTitle: true,
+            appBar: AppBar(centerTitle: true,automaticallyImplyLeading: false,
                 elevation: 0,
                 backgroundColor: ColorConstants.whiteColor,
                 titleTextStyle: const TextStyle(
