@@ -42,6 +42,7 @@ class GetStartedScreen extends StatelessWidget {
                 child: Container(height: 60,
                 width: double.infinity,
                 color: Colors.amber,),
+
               ),SizedBox(height: 20,),
             ],
           ),
