@@ -1,10 +1,7 @@
-
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-
 
 class ItemDetailsScreen extends StatefulWidget {
   @override
@@ -32,7 +29,6 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
     var devWidth = MediaQuery.of(context).size.width;
-
     double totalPrice = unitPrice * quantity;
 
     return SafeArea(
@@ -124,15 +120,21 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                       ],
                     ),
                     Text(
-                      "Total Price: ${totalPrice.toStringAsFixed(2)}", // Display total price
+                      "Total Price: ${totalPrice.toStringAsFixed(2)}",
+                      // Display total price
                       style: TextStyle(
                         fontSize: devHeight * 0.03,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: devHeight*0.03,),
-                    MaterialButtonWidget(onPressed: (){},buttonColor: ColorConstants.primaryColor,buttonText: "Buy now",)
-
+                    SizedBox(
+                      height: devHeight * 0.03,
+                    ),
+                    MaterialButtonWidget(
+                      onPressed: () {},
+                      buttonColor: ColorConstants.primaryColor,
+                      buttonText: "Buy now",
+                    )
                   ],
                 ),
               ),

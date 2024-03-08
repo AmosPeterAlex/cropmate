@@ -49,7 +49,7 @@ class ItemCard extends StatelessWidget {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Text(
-                  "title",
+                  "${title}",
                   style: TextStyle(
                       fontSize: devHeight * 0.02, fontWeight: FontWeight.w600),
                 ),
