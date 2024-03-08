@@ -1,7 +1,12 @@
 import 'package:cropmate/core/constants/color_constants.dart';
+import 'package:cropmate/presentation/common/cart_screen/view/cart_screen.dart';
+import 'package:cropmate/presentation/user/user_harvested_item_screen/controller/user_harvested_item_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
+
+import '../respository/api/cart_page/modal/cart_page_modal.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({
@@ -11,6 +16,9 @@ class ItemCard extends StatelessWidget {
     this.imageUrl,
     this.contant,
     this.sourceName,
+    this.price,
+    this.quantity,
+    this.item,
   });
 
   final String? title;
@@ -18,6 +26,9 @@ class ItemCard extends StatelessWidget {
   final String? imageUrl;
   final String? contant;
   final String? sourceName;
+  final double? price;
+  final double? quantity;
+  final Items? item;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +44,10 @@ class ItemCard extends StatelessWidget {
           Container(
             height: devHeight * 0.2,
             decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(10),
-              // image: DecorationImage(
-              //     image: NetworkImage(""), fit: BoxFit.cover)
-            ),
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                    image: NetworkImage(""), fit: BoxFit.cover)),
           ),
           SizedBox(
             height: 10,
@@ -49,7 +59,7 @@ class ItemCard extends StatelessWidget {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Text(
-                  "${title}",
+                  title!,
                   style: TextStyle(
                       fontSize: devHeight * 0.02, fontWeight: FontWeight.w600),
                 ),
@@ -57,20 +67,25 @@ class ItemCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Price/"),
+                  Text("$price/"),
                   Text(
-                    "Quantity",
+                    "$quantity",
                   ),
                 ],
               ),
               SingleChildScrollView(
                 child: Text(
-                  "from",
+                  "$sourceName",
                 ),
-              scrollDirection: Axis.horizontal,),
+                scrollDirection: Axis.horizontal,
+              ),
               MaterialButton(
                 color: ColorConstants.primaryColor,
-                onPressed: () {},
+                onPressed: () {
+                  context
+                      .read<UserHarvestedItemScreenController>()
+                      .addToList(item!);
+                },
                 child: Text(
                   "ADD TO CART",
                   style: TextStyle(color: ColorConstants.whiteColor),
