@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: devWidth * .2,
+        toolbarHeight: devHeight * .14,
         title: CropMateIconWidget(),
         centerTitle: true,
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
