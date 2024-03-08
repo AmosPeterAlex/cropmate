@@ -1,5 +1,7 @@
 import 'package:cropmate/core/constants/color_constants.dart';
+import 'package:cropmate/core/constants/text_style_constants.dart';
 import 'package:flutter/material.dart';
+
 
 class ManagementCard extends StatelessWidget {
   final String name;
