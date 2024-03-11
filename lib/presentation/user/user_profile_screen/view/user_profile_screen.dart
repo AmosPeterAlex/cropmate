@@ -1,11 +1,12 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/farmer_widgets/Profile_listtile.dart';
+import 'package:cropmate/presentation/farmer/view_profile_screen/view/view_profile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../common/govt_scheme_screen/view/govt_scheme_screen.dart';
-import '../../../farmer/Update_profile_screen/view/update_profile_screen.dart';
+
 
 class UserProfileScreen extends StatelessWidget {
 
@@ -31,7 +32,7 @@ class UserProfileScreen extends StatelessWidget {
             text: "Update profile",
             icon: Icon(Icons.person),
             onTileClick: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => UpdateProfileScreen())),
+                MaterialPageRoute(builder: (context) => ViewProfileScreen())),
           ),
           ProfileListTile(
             text: "Government schemes information",

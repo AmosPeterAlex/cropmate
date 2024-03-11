@@ -15,8 +15,10 @@ class ItemCard extends StatelessWidget {
     this.description,
     this.imageUrl,
     this.contant,
-    this.sourceName, this.price, this.quantity, this.item,
-
+    this.sourceName,
+    this.price,
+    this.quantity,
+    this.item,
   });
 
   final String? title;
@@ -42,11 +44,10 @@ class ItemCard extends StatelessWidget {
           Container(
             height: devHeight * 0.2,
             decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                  image: NetworkImage(""), fit: BoxFit.cover)
-            ),
+                color: Colors.red,
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                    image: NetworkImage(""), fit: BoxFit.cover)),
           ),
           SizedBox(
             height: 10,
@@ -76,11 +77,14 @@ class ItemCard extends StatelessWidget {
                 child: Text(
                   "$sourceName",
                 ),
-              scrollDirection: Axis.horizontal,),
+                scrollDirection: Axis.horizontal,
+              ),
               MaterialButton(
                 color: ColorConstants.primaryColor,
                 onPressed: () {
-                  context.read<UserHarvestedItemScreenController>().addToList(item!);
+                  context
+                      .read<UserHarvestedItemScreenController>()
+                      .addToList(item!);
                 },
                 child: Text(
                   "ADD TO CART",

@@ -1,9 +1,12 @@
 import 'package:cropmate/core/constants/color_constants.dart';
+import 'package:cropmate/presentation/farmer/home_screen/controller/Home_screen_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../global_widgets/crop_mate_icon_widget.dart';
 import '../../../../global_widgets/item_card.dart';
+import '../../../common/cart_screen/view/cart_screen.dart';
 import '../../../common/product_detail_screen/view/product_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,6 +14,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    HomeScreenController provider =Provider.of<HomeScreenController>(context);
     var devHeight = MediaQuery.of(context).size.height;
     var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -31,13 +35,15 @@ class HomeScreen extends StatelessWidget {
           toolbarHeight: devHeight * .1,
           actions: [
             IconButton(
-                onPressed: () {}, icon: Icon(CupertinoIcons.cart_badge_plus))
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>cartScreen()));
+                }, icon: Icon(CupertinoIcons.cart_badge_plus))
           ],
         ),
         body: Padding(
           padding: EdgeInsets.all(devHeight * 0.01),
           child: GridView.builder(
-              itemCount: 12,
+              itemCount: itemList.length,
               shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   childAspectRatio: .58,
@@ -50,7 +56,13 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) => ItemDetailsScreen())),
-                    child: ItemCard());
+                    child: ItemCard(
+                      title: itemList[index].name,
+                      imageUrl: itemList[index].image,
+                      price: itemList[index].price,
+                      quantity: itemList[index].quantity,
+                      item: itemList[index],
+                    ));
               }),
         ));
   }
