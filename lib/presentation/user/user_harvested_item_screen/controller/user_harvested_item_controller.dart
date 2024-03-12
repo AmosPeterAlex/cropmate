@@ -2,7 +2,7 @@ import 'package:cropmate/core/constants/image_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../../../respository/api/cart_page/modal/cart_page_modal.dart';
+import '../../../../repository/api/cart_page/modal/cart_page_modal.dart';
 
 List<Items> itemList = [
   Items(
@@ -69,6 +69,7 @@ class UserHarvestedItemScreenController extends ChangeNotifier {
   List<Items> get cart => _cart;
   List<String> categorylist = ["Vegitable", "Fruits", "Grains"];
   String category = "Vegitables";
+  var screens = [];
 
   onTap({required index}) {
     category = categorylist[index].toLowerCase();

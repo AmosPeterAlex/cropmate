@@ -2,7 +2,7 @@ import 'package:cropmate/core/constants/image_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../../../respository/api/cart_page/modal/cart_page_modal.dart';
+import '../../../../repository/api/cart_page/modal/cart_page_modal.dart';
 
 List<Items> itemList = [
   Items(
@@ -67,7 +67,6 @@ class HomeScreenController extends ChangeNotifier {
   final List<Items> _cart = [];
 
   List<Items> get cart => _cart;
-
 
   void addToList(Items productFromCart) {
     if (productFromCart.count != 0) {
