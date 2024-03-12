@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
-import '../repository/api/cart_page/modal/cart_page_modal.dart';
-
+import '../repository/api/common/cart_page/model/cart_page_modal.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({
