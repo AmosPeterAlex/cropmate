@@ -71,6 +71,7 @@ class LoginPageScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                /*
                 //TODO anuvind materialbutton widget add akiy karinnj edit akam
                 Text(
                   'Create Account as Farmer',
@@ -85,6 +86,8 @@ class LoginPageScreen extends StatelessWidget {
                   style:
                       TextStyle(color: ColorConstants.blackColor, fontSize: 16),
                 ),
+
+                 */
               ],
             ),
           )),
