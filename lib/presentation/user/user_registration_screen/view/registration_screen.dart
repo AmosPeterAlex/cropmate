@@ -39,11 +39,11 @@ class UserRegistrationScreen extends StatelessWidget {
             TextFieldScreen(hintText: "Password"),
             TextFieldScreen(hintText: "Confirm Password"),
             SizedBox(
-              height: devHeight * 0.020,
+              height: devHeight * 0.02,
             ),
             //Add dropdown button here
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: devWidth * 0.1),
+              padding: EdgeInsets.symmetric(horizontal: devWidth * 0.11),
               // child: DropdownButton(
               //   items: ['User', 'Farmer'].map((String value) {
               //     return DropdownMenuItem<String>(
