@@ -3,8 +3,10 @@
 import 'package:cropmate/get_started_screen/get_started_screen.dart';
 import 'package:cropmate/presentation/admin/home_screen/view/home_screen.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/controller/bottom_navigation_controller.dart';
+import 'package:cropmate/presentation/farmer/bottom_navigation_screen/view/bottom_navigation_screen.dart';
 import 'package:cropmate/presentation/farmer/home_screen/controller/Home_screen_controller.dart';
 import 'package:cropmate/presentation/user/user_bottom_navigation_screen/controller/user_bottom_nav_screen_controller.dart';
+import 'package:cropmate/presentation/user/user_bottom_navigation_screen/view/user_bottom_nav_screen.dart';
 import 'package:cropmate/presentation/user/user_harvested_item_screen/controller/user_harvested_item_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => UserHarvestedItemScreenController(),),
         ],
       child: MaterialApp(
-        home: LoginPageScreen(),
+        home: GetStartedScreen(),
         debugShowCheckedModeBanner: false,
       ),
     );
