@@ -1,3 +1,4 @@
+/*
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/core/constants/image_constants.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
@@ -11,14 +12,8 @@ class LoginPageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var devHeight = MediaQuery
-        .of(context)
-        .size
-        .height;
-    var devWidth = MediaQuery
-        .of(context)
-        .size
-        .width;
+    var devHeight = MediaQuery.of(context).size.height;
+    var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(devHeight * .02),
@@ -71,7 +66,8 @@ class LoginPageScreen extends StatelessWidget {
                         child: InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => UserRegistrationScreen()));
+                                builder: (context) =>
+                                    UserRegistrationScreen()));
                           },
                           child: Text(
                             '\tCreate Account',
@@ -95,7 +91,9 @@ class LoginPageScreen extends StatelessWidget {
   }
 }
 
-/*
+
+ */
+
 import 'package:cropmate/presentation/admin/home_screen/view/home_screen.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/view/bottom_navigation_screen.dart';
 import 'package:cropmate/presentation/user/user_bottom_navigation_screen/controller/user_bottom_nav_screen_controller.dart';
@@ -107,9 +105,8 @@ class GetStartedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(),
-
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -118,30 +115,65 @@ class GetStartedScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>HomeScreen() ,),);
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeScreen(),
+                    ),
+                  );
                 },
-                child: Container(height: 60,
-                width: double.infinity,
-                color: Colors.amber,),
-              ),SizedBox(height: 20,),
+                child: Container(
+                  height: 60,
+                  child: Text('Admin'),
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  color: Colors.amber,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>UserBottomNavScreen() ,),);
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => UserBottomNavScreen(),
+                    ),
+                  );
                 },
-                child: Container(height: 60,
-                width: double.infinity,
-                color: Colors.amber,),
-              ),SizedBox(height: 20,),
+                child: Container(
+                  height: 60,
+                  child: Text('User'),
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  color: Colors.amber,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
               InkWell(
-               onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>BottomNavigationScreen() ,),);
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BottomNavigationScreen(),
+                    ),
+                  );
                 },
-                child: Container(height: 60,
-                width: double.infinity,
-                color: Colors.amber,),
-
-              ),SizedBox(height: 20,),
+                child: Container(
+                  height: 60,
+                  child: Text('Farmer'),
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  color: Colors.amber,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),
@@ -149,5 +181,3 @@ class GetStartedScreen extends StatelessWidget {
     );
   }
 }
-
- */
