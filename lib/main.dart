@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => UserHarvestedItemScreenController(),),
         ],
       child: MaterialApp(
-        home: GetStartedScreen(),
+        home: LoginPageScreen(),
         debugShowCheckedModeBanner: false,
       ),
     );
