@@ -1,6 +1,5 @@
 import 'package:cropmate/core/constants/image_constants.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/cupertino.dart';
 
 import '../../../../repository/api/common/cart_page/model/cart_page_modal.dart';
 

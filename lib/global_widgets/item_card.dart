@@ -1,9 +1,6 @@
 import 'package:cropmate/core/constants/color_constants.dart';
-import 'package:cropmate/presentation/common/cart_screen/view/cart_screen.dart';
 import 'package:cropmate/presentation/user/user_harvested_item_screen/controller/user_harvested_item_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../repository/api/common/cart_page/model/cart_page_modal.dart';
@@ -33,7 +30,6 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
-    var devWidth = MediaQuery.of(context).size.width;
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),

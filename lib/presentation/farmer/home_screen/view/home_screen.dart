@@ -1,4 +1,3 @@
-import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/presentation/farmer/home_screen/controller/Home_screen_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeScreenController provider =Provider.of<HomeScreenController>(context);
+    Provider.of<HomeScreenController>(context);
     var devHeight = MediaQuery.of(context).size.height;
     var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(

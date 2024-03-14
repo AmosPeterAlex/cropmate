@@ -1,7 +1,5 @@
-
-
-import 'package:cropmate/get_started_screen/get_started_screen.dart';
-import 'package:cropmate/presentation/admin/home_screen/view/home_screen.dart';
+import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
+import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/controller/bottom_navigation_controller.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/view/bottom_navigation_screen.dart';
 import 'package:cropmate/presentation/farmer/home_screen/controller/Home_screen_controller.dart';
@@ -23,14 +21,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-          ChangeNotifierProvider(
+        ChangeNotifierProvider(
             create: (context) => BottomNavigationController()),
-        ChangeNotifierProvider(create: (context) => UserBottomNavController(),),
-        ChangeNotifierProvider(create: (context) => HomeScreenController(),),
-        ChangeNotifierProvider(create: (context) => UserHarvestedItemScreenController(),),
-        ],
+        ChangeNotifierProvider(
+          create: (context) => UserBottomNavController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => HomeScreenController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => UserHarvestedItemScreenController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => LoginScreenController(),
+        ),
+      ],
       child: MaterialApp(
-        home: GetStartedScreen(),
+        home: LoginScreen(),
         debugShowCheckedModeBanner: false,
       ),
     );

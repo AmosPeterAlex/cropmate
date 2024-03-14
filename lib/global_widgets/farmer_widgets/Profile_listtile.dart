@@ -16,8 +16,6 @@ class ProfileListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var devHeight = MediaQuery.of(context).size.height;
-    var devWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(3.0),
       child: ListTile(

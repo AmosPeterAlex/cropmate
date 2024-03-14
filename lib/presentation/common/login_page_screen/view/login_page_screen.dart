@@ -1,5 +1,4 @@
 import 'package:cropmate/core/constants/color_constants.dart';
-import 'package:cropmate/core/constants/image_constants.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
@@ -11,7 +10,6 @@ class LoginPageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
-    var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
           minimum: EdgeInsets.only(top: devHeight * 0.01),

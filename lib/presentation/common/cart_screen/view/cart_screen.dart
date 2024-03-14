@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../user/user_harvested_item_screen/controller/user_harvested_item_controller.dart';
-import '../controller/cart_controller.dart';
 
 class cartScreen extends StatefulWidget {
   @override
