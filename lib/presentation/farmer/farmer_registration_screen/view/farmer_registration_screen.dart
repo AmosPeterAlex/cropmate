@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/color_constants.dart';
@@ -15,7 +14,6 @@ class FarmerRegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
-    var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
           minimum: EdgeInsets.only(top: devHeight * 0.04),

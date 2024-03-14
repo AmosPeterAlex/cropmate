@@ -1,9 +1,7 @@
 import 'package:cropmate/core/constants/color_constants.dart';
-import 'package:cropmate/core/constants/image_constants.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UserRegistrationScreen extends StatelessWidget {

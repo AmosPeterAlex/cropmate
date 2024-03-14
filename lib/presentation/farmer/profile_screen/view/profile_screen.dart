@@ -1,9 +1,7 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/farmer_widgets/Profile_listtile.dart';
 import 'package:cropmate/presentation/farmer/view_profile_screen/view/view_profile_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../../common/govt_scheme_screen/view/govt_scheme_screen.dart';
 
@@ -15,7 +13,6 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
-    var devWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(

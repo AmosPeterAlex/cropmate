@@ -1,24 +1,25 @@
 import 'package:cropmate/core/constants/color_constants.dart';
-import 'package:cropmate/core/constants/image_constants.dart';
+import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
 import 'package:cropmate/presentation/user/user_registration_screen/view/registration_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class LoginPageScreen extends StatelessWidget {
-  const LoginPageScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
-    var devHeight = MediaQuery
-        .of(context)
-        .size
-        .height;
-    var devWidth = MediaQuery
-        .of(context)
-        .size
-        .width;
+    var devHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(devHeight * .02),
@@ -35,8 +36,14 @@ class LoginPageScreen extends StatelessWidget {
                       fontSize: devHeight * .034),
                 ),
               ),
-              TextFieldScreen(hintText: "Name"),
-              TextFieldScreen(hintText: "Password"),
+              TextFieldScreen(
+                hintText: "Name",
+                controller: nameController,
+              ),
+              TextFieldScreen(
+                hintText: "Password",
+                controller: passController,
+              ),
               Align(
                 alignment: Alignment.topRight,
                 child: InkWell(
@@ -50,7 +57,13 @@ class LoginPageScreen extends StatelessWidget {
                 height: 15,
               ),
               MaterialButtonWidget(
-                onPressed: () {},
+                onPressed: () {
+                  Provider.of<LoginScreenController>(context, listen: false)
+                      .onLogin(
+                          nameController.text, passController.text, context);
+                  nameController.clear();
+                  passController.clear();
+                },
                 buttonText: "Log in",
                 buttonColor: ColorConstants.primaryColor,
               ),
@@ -71,7 +84,8 @@ class LoginPageScreen extends StatelessWidget {
                         child: InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => UserRegistrationScreen()));
+                                builder: (context) =>
+                                    UserRegistrationScreen()));
                           },
                           child: Text(
                             '\tCreate Account',
