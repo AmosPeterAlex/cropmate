@@ -4,6 +4,7 @@ import 'package:cropmate/presentation/common/login_screen/controller/login_scree
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
+import 'package:cropmate/presentation/common/registration_screen/view/registration_screen.dart';
 // import 'package:cropmate/presentation/common/registration_screen/view/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -83,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 buttonColor: ColorConstants.primaryColor,
               ),
               Align(
-                heightFactor: devHeight * .014,
+                heightFactor: devHeight * .012,
                 alignment: Alignment.bottomCenter,
                 child: RichText(
                   text: TextSpan(
@@ -98,9 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         alignment: PlaceholderAlignment.middle,
                         child: InkWell(
                           onTap: () {
-                            // Navigator.of(context).push(MaterialPageRoute(
-                            //     builder: (context) =>
-                            //         UserRegistrationScreen));
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    RegistrationScreen()));
                           },
                           child: Text(
                             '\tCreate Account',

@@ -15,7 +15,7 @@ class RegistrationService {
         return decodedData;
       } else {
         log(decodedData["status"].toString());
-        log("RegistrationServices>postRegistrationData()>failed ");
+        log("RegistrationServices>postRegistrationData()>failed=>$message ");
         return decodedData;
       }
     } catch (e) {
