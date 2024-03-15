@@ -2,9 +2,12 @@ import 'package:cropmate/presentation/admin/admin_login_screen/controller/admin_
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
 import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
 import 'package:cropmate/presentation/common/registration_screen/controller/registration_screen_controller.dart';
+import 'package:cropmate/presentation/common/splash_screen/view/splash_screen.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/controller/bottom_navigation_controller.dart';
+import 'package:cropmate/presentation/farmer/bottom_navigation_screen/view/bottom_navigation_screen.dart';
 import 'package:cropmate/presentation/farmer/home_screen/controller/Home_screen_controller.dart';
 import 'package:cropmate/presentation/user/user_bottom_navigation_screen/controller/user_bottom_nav_screen_controller.dart';
+import 'package:cropmate/presentation/user/user_bottom_navigation_screen/view/user_bottom_nav_screen.dart';
 import 'package:cropmate/presentation/user/user_harvested_item_screen/controller/user_harvested_item_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        home: LoginScreen(),
+        home: SplashScreen(),
         debugShowCheckedModeBanner: false,
       ),
     );
