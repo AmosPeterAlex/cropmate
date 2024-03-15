@@ -98,9 +98,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         alignment: PlaceholderAlignment.middle,
                         child: InkWell(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    UserRegistrationScreen()));
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //     builder: (context) =>
+                            //         UserRegistrationScreen));
                           },
                           child: Text(
                             '\tCreate Account',
