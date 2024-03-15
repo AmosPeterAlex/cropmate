@@ -38,16 +38,18 @@ class ApiHelper {
   }
 
   //for post
-  static Future postData({
-    //future added
-    required String endPoint,
-    Map<String, String>? header,
-    required Map<String, dynamic> body,
-  }) async {
+  static Future postData(
+      {
+      //future added
+      required String endPoint,
+      Map<String, String>? header,
+      required Map<String, dynamic> body,
+      required finalurl}) async {
     log("Apihelper>postData");
     log("$body");
 
-    final url = Uri.parse(AppConfig.baseUrl + endPoint);
+    final url = Uri.parse(finalurl ?? AppConfig.baseUrl + endPoint);
+    // final url = Uri.parse("http://10.11.0.236:8000/cropmapp/register/");
     //code from gpt
     log("Request URL: $url");
     try {
