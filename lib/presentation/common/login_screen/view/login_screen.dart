@@ -4,7 +4,7 @@ import 'package:cropmate/presentation/common/login_screen/controller/login_scree
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
-// import 'package:cropmate/presentation/user/user_registration_screen/view/registration_screen.dart';
+// import 'package:cropmate/presentation/common/registration_screen/view/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -82,36 +82,38 @@ class _LoginScreenState extends State<LoginScreen> {
                 buttonText: "Log in",
                 buttonColor: ColorConstants.primaryColor,
               ),
-              SizedBox(
-                height: 10,
-              ),
-              RichText(
-                text: TextSpan(
-                  style:
-                      TextStyle(color: ColorConstants.blackColor, fontSize: 16),
-                  children: [
-                    TextSpan(
-                      text: "Don't Have an Account?\t",
-                      style: TextStyle(letterSpacing: .5),
-                    ),
-                    WidgetSpan(
-                      alignment: PlaceholderAlignment.middle,
-                      child: InkWell(
-                        onTap: () {
-                          // Navigator.of(context).push(MaterialPageRoute(
-                          //     builder: (context) => UserRegistrationScreen()));
-                        },
-                        child: Text(
-                          '\tCreate Account',
-                          style: TextStyle(
-                              color: ColorConstants.primaryColor,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: .3),
+              Align(
+                heightFactor: devHeight * .014,
+                alignment: Alignment.bottomCenter,
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(
+                        color: ColorConstants.blackColor, fontSize: 16),
+                    children: [
+                      TextSpan(
+                        text: "Don't Have an Account?\t",
+                        style: TextStyle(letterSpacing: .5),
+                      ),
+                      WidgetSpan(
+                        alignment: PlaceholderAlignment.middle,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    UserRegistrationScreen()));
+                          },
+                          child: Text(
+                            '\tCreate Account',
+                            style: TextStyle(
+                                color: ColorConstants.primaryColor,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: .3),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
