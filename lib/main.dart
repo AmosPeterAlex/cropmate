@@ -1,5 +1,6 @@
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
 import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
+import 'package:cropmate/presentation/common/registration_screen/controller/registration_screen_controller.dart';
 import 'package:cropmate/presentation/common/splash_screen/view/splash_screen.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/controller/bottom_navigation_controller.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/view/bottom_navigation_screen.dart';
@@ -35,6 +36,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => LoginScreenController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => RegistrationScreenController(),
         ),
       ],
       child: MaterialApp(
