@@ -72,7 +72,7 @@ class UserHarvestedItemScreen extends StatelessWidget {
                 itemCount: itemList.length,
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: .65,
+                    childAspectRatio: .60,
                     crossAxisCount: 2,
                     crossAxisSpacing: devHeight * .008,
                     mainAxisSpacing: devWidth * 0.02),

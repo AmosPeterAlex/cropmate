@@ -4,8 +4,7 @@ import 'package:cropmate/presentation/common/login_screen/controller/login_scree
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
-import 'package:cropmate/presentation/common/registration_screen/view/registration_screen.dart';
-// import 'package:cropmate/presentation/common/registration_screen/view/registration_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

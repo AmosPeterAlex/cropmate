@@ -43,7 +43,7 @@ class ItemCard extends StatelessWidget {
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
-                    image: NetworkImage(""), fit: BoxFit.cover)),
+                    image: AssetImage(imageUrl!), fit: BoxFit.cover)),
           ),
           SizedBox(
             height: 10,
