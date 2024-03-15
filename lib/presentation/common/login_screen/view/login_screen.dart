@@ -1,9 +1,10 @@
 import 'package:cropmate/core/constants/color_constants.dart';
+import 'package:cropmate/presentation/admin/admin_login_screen/view/admin_login_screen.dart';
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
-import 'package:cropmate/presentation/user/user_registration_screen/view/registration_screen.dart';
+// import 'package:cropmate/presentation/user/user_registration_screen/view/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,10 +18,24 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController passController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(actions: [
+        PopupMenuButton(
+            itemBuilder: ((context) => [
+                  PopupMenuItem(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AdminLoginScreen()));
+                      },
+                      child: Text('Login as Admin'))
+                ]))
+      ]),
       body: Padding(
         padding: EdgeInsets.all(devHeight * .02),
         child: ListView(children: [
@@ -67,38 +82,36 @@ class _LoginScreenState extends State<LoginScreen> {
                 buttonText: "Log in",
                 buttonColor: ColorConstants.primaryColor,
               ),
-              Align(
-                heightFactor: devHeight * .014,
-                alignment: Alignment.bottomCenter,
-                child: RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                        color: ColorConstants.blackColor, fontSize: 16),
-                    children: [
-                      TextSpan(
-                        text: "Don't Have an Account?\t",
-                        style: TextStyle(letterSpacing: .5),
-                      ),
-                      WidgetSpan(
-                        alignment: PlaceholderAlignment.middle,
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    UserRegistrationScreen()));
-                          },
-                          child: Text(
-                            '\tCreate Account',
-                            style: TextStyle(
-                                color: ColorConstants.primaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: .3),
-                          ),
+              SizedBox(
+                height: 10,
+              ),
+              RichText(
+                text: TextSpan(
+                  style:
+                      TextStyle(color: ColorConstants.blackColor, fontSize: 16),
+                  children: [
+                    TextSpan(
+                      text: "Don't Have an Account?\t",
+                      style: TextStyle(letterSpacing: .5),
+                    ),
+                    WidgetSpan(
+                      alignment: PlaceholderAlignment.middle,
+                      child: InkWell(
+                        onTap: () {
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //     builder: (context) => UserRegistrationScreen()));
+                        },
+                        child: Text(
+                          '\tCreate Account',
+                          style: TextStyle(
+                              color: ColorConstants.primaryColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: .3),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -108,60 +121,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-/*
-import 'package:cropmate/presentation/admin/home_screen/view/home_screen.dart';
-import 'package:cropmate/presentation/farmer/bottom_navigation_screen/view/bottom_navigation_screen.dart';
-import 'package:cropmate/presentation/user/user_bottom_navigation_screen/controller/user_bottom_nav_screen_controller.dart';
-import 'package:cropmate/presentation/user/user_bottom_navigation_screen/view/user_bottom_nav_screen.dart';
-import 'package:flutter/material.dart';
-
-class GetStartedScreen extends StatelessWidget {
-  const GetStartedScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(),
-
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>HomeScreen() ,),);
-                },
-                child: Container(height: 60,
-                width: double.infinity,
-                color: Colors.amber,),
-              ),SizedBox(height: 20,),
-              InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>UserBottomNavScreen() ,),);
-                },
-                child: Container(height: 60,
-                width: double.infinity,
-                color: Colors.amber,),
-              ),SizedBox(height: 20,),
-              InkWell(
-               onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) =>BottomNavigationScreen() ,),);
-                },
-                child: Container(height: 60,
-                width: double.infinity,
-                color: Colors.amber,),
-
-              ),SizedBox(height: 20,),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
- */

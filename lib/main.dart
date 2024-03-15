@@ -1,3 +1,4 @@
+import 'package:cropmate/presentation/admin/admin_login_screen/controller/admin_login_controller.dart';
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
 import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/controller/bottom_navigation_controller.dart';
@@ -32,6 +33,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => LoginScreenController(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => AdminLoginController(),
         ),
       ],
       child: MaterialApp(
