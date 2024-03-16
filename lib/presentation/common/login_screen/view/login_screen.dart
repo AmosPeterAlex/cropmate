@@ -6,10 +6,13 @@ import 'package:cropmate/presentation/common/login_screen/controller/login_scree
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
+import 'package:cropmate/repository/api/admin/service/admin_login_service.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../admin/home_screen/view/home_screen.dart';
 import '../../registration_screen/view/registration_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -32,10 +35,11 @@ class _LoginScreenState extends State<LoginScreen> {
             itemBuilder: ((context) => [
                   PopupMenuItem(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => AdminLoginScreen()));
+                        checkTokenAndNavigate(context);
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => AdminLoginScreen()));
                       },
                       child: Text('Login as Admin'))
                 ]))
@@ -104,8 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    RegistrationScreen()));
+                                builder: (context) => RegistrationScreen()));
                           },
                           child: Text(
                             '\tCreate Account',
@@ -126,5 +129,24 @@ class _LoginScreenState extends State<LoginScreen> {
         ]),
       ),
     );
+  }
+
+  Future<void> checkTokenAndNavigate(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('token');
+
+    if (token != null) {
+      // Token exists, navigate to HomeScreen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+    } else {
+      // Token doesn't exist, navigate to AdminLoginScreen
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => AdminLoginScreen()),
+      );
+    }
   }
 }
