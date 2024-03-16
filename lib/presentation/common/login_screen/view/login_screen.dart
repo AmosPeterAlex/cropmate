@@ -84,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 buttonColor: ColorConstants.primaryColor,
               ),
               Align(
-                heightFactor: devHeight * .014,
+                heightFactor: devHeight * .01,
                 alignment: Alignment.bottomCenter,
                 child: RichText(
                   text: TextSpan(
