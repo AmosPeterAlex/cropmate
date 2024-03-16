@@ -1,10 +1,12 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/farmer_widgets/Profile_listtile.dart';
+import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
 import 'package:cropmate/presentation/farmer/view_profile_screen/view/view_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/govt_scheme_screen/view/govt_scheme_screen.dart';
 
+import '../../../common/login_screen/view/login_screen.dart';
 import '../../soil_analysis_Screen/view/soil_analysis_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -100,7 +102,9 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      LoginScreenController().logout(context);
+                      // Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
