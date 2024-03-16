@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/presentation/admin/admin_login_screen/view/admin_login_screen.dart';
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
@@ -7,6 +9,8 @@ import 'package:cropmate/global_widgets/textfield.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../registration_screen/view/registration_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -78,12 +82,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           nameController.text, passController.text, context);
                   nameController.clear();
                   passController.clear();
+                  print('Success1');
                 },
                 buttonText: "Log in",
                 buttonColor: ColorConstants.primaryColor,
               ),
               Align(
-                heightFactor: devHeight * .012,
+                heightFactor: devHeight * .01,
                 alignment: Alignment.bottomCenter,
                 child: RichText(
                   text: TextSpan(

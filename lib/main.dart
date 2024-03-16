@@ -11,6 +11,8 @@ import 'package:cropmate/presentation/user/user_harvested_item_screen/controller
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'presentation/common/registration_screen/controller/registration_screen_controller.dart';
+
 void main() {
   runApp(const MyApp());
 }

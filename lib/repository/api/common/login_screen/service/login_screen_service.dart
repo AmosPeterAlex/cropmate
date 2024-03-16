@@ -9,9 +9,9 @@ class LoginScreenService {
           endPoint: "cropmapp/login/",
           body: data,
           finalurl: 'http://10.11.0.236:8000/cropmapp/login/');
-      log(decodedData.toString());
+      log(decodedData.toString());//edh
       if (decodedData["status"] == 1) {
-        log("success");
+        log("success 4");
         return decodedData;
       } else {
         log(decodedData["status"].toString());

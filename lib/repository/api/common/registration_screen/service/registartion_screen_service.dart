@@ -10,6 +10,7 @@ class RegistrationService {
           body: data,
           finalurl: 'http://10.11.0.236:8000/cropmapp/register/');
       var message = decodedData["message"];
+      log(decodedData.toString());
       if (decodedData["status"] == 1) {
         log("RegistrationServices>postRegistrationData()>success = $message");
         return decodedData;

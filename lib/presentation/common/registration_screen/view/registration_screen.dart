@@ -16,7 +16,7 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
-  String _selectedName = "Farmer";
+  String _selectedName = "User";
   var nameController = TextEditingController();
   var emailController = TextEditingController();
   var phoneController = TextEditingController();
@@ -83,13 +83,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         _selectedName = newValue!;
                       });
                     },
-                    items: <String>["Farmer", "User"].map((String value) {
+                    items: <String>["User", "Farmer"].map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(value),
                       );
-                    }).toList(),
-                  ),
+                    }).toList(),                  ),
                 ),
                 SizedBox(
                   height: devHeight * 0.02,
@@ -99,13 +98,15 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     Provider.of<RegistrationScreenController>(context,
                             listen: false)
                         .onRegister(
-                            name: nameController.text,
-                            email: emailController.text,
-                            phoneNumber: phoneController.text,
-                            location: locationController.text,
-                            address: addressController.text,
-                            password: passwordController.text,
-                            userType: _selectedName, context: context,);
+                      name: nameController.text,
+                      email: emailController.text,
+                      phoneNumber: phoneController.text,
+                      location: locationController.text,
+                      address: addressController.text,
+                      password: passwordController.text,
+                      userType: _selectedName,
+                      context: context,
+                    );
                     // print("api reg completed");
                   },
                   buttonText: "Register",

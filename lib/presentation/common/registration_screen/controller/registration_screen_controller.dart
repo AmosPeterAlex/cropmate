@@ -1,9 +1,10 @@
+
 import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
 import 'package:cropmate/repository/api/common/registration_screen/service/registartion_screen_service.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreenController extends ChangeNotifier {
-  Future onRegister(
+  void onRegister(
       {required String name,
       required String email,
       required String phoneNumber,
@@ -11,7 +12,7 @@ class RegistrationScreenController extends ChangeNotifier {
       required String address,
       required String password,
       required String userType,
-      required BuildContext context}) async {
+      required BuildContext context})  {
     var data = {
       "username": name,
       "email": email,
@@ -37,3 +38,5 @@ class RegistrationScreenController extends ChangeNotifier {
     });
   }
 }
+
+
