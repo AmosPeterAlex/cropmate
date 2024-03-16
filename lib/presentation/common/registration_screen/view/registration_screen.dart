@@ -106,7 +106,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             address: addressController.text,
                             password: passwordController.text,
                             userType: _selectedName, context: context,);
-                    print("api reg completed");
+                    // print("api reg completed");
                   },
                   buttonText: "Register",
                   buttonColor: ColorConstants.primaryColor,

@@ -22,7 +22,7 @@ class RegistrationScreenController extends ChangeNotifier {
       "password": password,
     };
     RegistrationService.postRegistrationData(data).then((decodedData) {
-      print("success i.e status ==1");
+
       if (decodedData["status"] == 1) {
         print("Registration  success\n i.e status ==1");
         Navigator.pushAndRemoveUntil(

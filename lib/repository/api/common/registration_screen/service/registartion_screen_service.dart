@@ -8,7 +8,7 @@ class RegistrationService {
       var decodedData = await ApiHelper.postData(
           endPoint: "cropmapp/register/",
           body: data,
-          finalurl: 'http://10.11.0.236:8000/cropmapp/register/');
+          finalurl: "http://10.11.0.236:8000/cropmapp/register/");
       var message = decodedData["message"];
       if (decodedData["status"] == 1) {
         log("RegistrationServices>postRegistrationData()>success = $message");
