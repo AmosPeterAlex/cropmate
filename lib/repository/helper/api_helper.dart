@@ -45,7 +45,7 @@ class ApiHelper {
       Map<String, String>? header,
       required Map<String, dynamic> body,
       required finalurl}) async {
-    log("Apihelper>postData");
+    log("Apihelper>postData 5");
     log("$body");
 
     final url = Uri.parse(finalurl ?? AppConfig.baseUrl + endPoint);
@@ -56,7 +56,7 @@ class ApiHelper {
       final response = await http.post(url, body: body);
 // After response
       log("Response Status Code: ${response.statusCode}");
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 || response.statusCode == 201) {
         var data = response.body;
         var decodedData = jsonDecode(data);
         log(decodedData["status"].toString());

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -67,7 +68,7 @@ class AppUtils {
         ) ,*/
 
         behavior: showOnTop ? SnackBarBehavior.floating : null,
-        backgroundColor: bgColor ?? Colors.white60,
+        backgroundColor: bgColor ?? ColorConstants.redColor,
         content: Text(message!, style: textStyle),
         duration: Duration(seconds: time),
         margin: showOnTop
