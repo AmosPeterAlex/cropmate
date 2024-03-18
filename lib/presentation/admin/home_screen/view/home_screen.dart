@@ -24,11 +24,6 @@ class HomeScreen extends StatelessWidget {
           IconButton(
               onPressed: () {
                 AdminLoginController().logout(context);
-
-                // Navigator.pushReplacement(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => AdminLoginScreen()));
               },
               icon: Icon(Icons.logout))
         ],
