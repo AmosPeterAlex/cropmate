@@ -13,21 +13,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Provider.of<HomeScreenController>(context);
+    // Provider.of<HomeScreenController>(context);
+    final controller =
+        Provider.of<FarmerHomeScreenController>(context, listen: false);
+    controller.fetchEqpList();
     var devHeight = MediaQuery.of(context).size.height;
     var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-        // appBar: AppBar(
-        //   centerTitle: true,
-        //   title: Text(
-        //     'Home',
-        //     style: TextStyle(
-        //         color: ColorConstants.blackColor, fontWeight: FontWeight.bold),
-        //   ),
-        // ),
-        // body: Center(
-        //   child: Text("Home screen"),
-        // ),
         appBar: AppBar(
           title: CropMateIconWidget(),
           centerTitle: true,
@@ -35,34 +27,52 @@ class HomeScreen extends StatelessWidget {
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>cartScreen()));
-                }, icon: Icon(CupertinoIcons.cart_badge_plus))
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => cartScreen()));
+                },
+                icon: Icon(CupertinoIcons.cart_badge_plus))
           ],
         ),
-        body: Padding(
-          padding: EdgeInsets.all(devHeight * 0.01),
-          child: GridView.builder(
-              itemCount: itemList.length,
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  childAspectRatio: .58,
-                  crossAxisCount: 2,
-                  crossAxisSpacing: devHeight * .008,
-                  mainAxisSpacing: devWidth * 0.02),
-              itemBuilder: (context, index) {
-                return InkWell(
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ItemDetailsScreen())),
-                    child: ItemCard(
-                      title: itemList[index].name,
-                      imageUrl: itemList[index].image,
-                      price: itemList[index].price,
-                      quantity: itemList[index].quantity,
-                      item: itemList[index],
-                    ));
-              }),
-        ));
+        body: Consumer<FarmerHomeScreenController>(
+            builder: (context, controller, child) => controller.isLoading ==
+                    true
+                ? Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : Padding(
+                    padding: EdgeInsets.all(devHeight * 0.01),
+                    child: GridView.builder(
+                        itemCount: controller.equipmentListModel?.data?.length,
+                        shrinkWrap: true,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            childAspectRatio: .58,
+                            crossAxisCount: 2,
+                            crossAxisSpacing: devHeight * .008,
+                            mainAxisSpacing: devWidth * 0.02),
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                              onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          ItemDetailsScreen())),
+                              child: ItemCard(
+                                  title: controller.equipmentListModel
+                                          .data?[index].eqipmentName ??
+                                      '',
+                                  imageUrl: controller
+                                      .equipmentListModel.data?[index].image,
+                                  price: controller
+                                          .equipmentListModel.data?[index].price
+                                          ?.toDouble() ??
+                                      0.0,
+                                  quantity: controller
+                                          .equipmentListModel.data?[index].qty
+                                          ?.toDouble() ??
+                                      0.0
+                                  // item:controller.equipmentListModel.data?[index].
+                                  ));
+                        }),
+                  )));
   }
 }

@@ -1,65 +1,63 @@
-// // To parse this JSON data, do
-// //
-// //     final govtSchemeModel = govtSchemeModelFromJson(jsonString);
 
-// import 'dart:convert';
 
-// GovtSchemeModel govtSchemeModelFromJson(String str) => GovtSchemeModel.fromJson(json.decode(str));
+import 'dart:convert';
 
-// String govtSchemeModelToJson(GovtSchemeModel data) => json.encode(data.toJson());
+GovtSchemeModel govtSchemeModelFromJson(String str) => GovtSchemeModel.fromJson(json.decode(str));
 
-// class GovtSchemeModel {
-//     int? status;
-//     List<Datum>? data;
+String govtSchemeModelToJson(GovtSchemeModel data) => json.encode(data.toJson());
 
-//     GovtSchemeModel({
-//         this.status,
-//         this.data,
-//     });
+class GovtSchemeModel {
+    int? status;
+    List<Datum>? data;
 
-//     factory GovtSchemeModel.fromJson(Map<String, dynamic> json) => GovtSchemeModel(
-//         status: json["status"],
-//         data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
-//     );
+    GovtSchemeModel({
+        this.status,
+        this.data,
+    });
 
-//     Map<String, dynamic> toJson() => {
-//         "status": status,
-//         "data": data == null ? [] : List<dynamic>.from(data!.map((x) => x.toJson())),
-//     };
-// }
+    factory GovtSchemeModel.fromJson(Map<String, dynamic> json) => GovtSchemeModel(
+        status: json["status"],
+        data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+    );
 
-// class Datum {
-//     int? id;
-//     String? schemeName;
-//     int? startAge;
-//     int? endAge;
-//     String? description;
-//     String? link;
+    Map<String, dynamic> toJson() => {
+        "status": status,
+        "data": data == null ? [] : List<dynamic>.from(data!.map((x) => x.toJson())),
+    };
+}
 
-//     Datum({
-//         this.id,
-//         this.schemeName,
-//         this.startAge,
-//         this.endAge,
-//         this.description,
-//         this.link,
-//     });
+class Datum {
+    int? id;
+    String? schemeName;
+    int? startAge;
+    int? endAge;
+    String? description;
+    String? link;
 
-//     factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-//         id: json["id"],
-//         schemeName: json["scheme_name"],
-//         startAge: json["start_age"],
-//         endAge: json["end_age"],
-//         description: json["description"],
-//         link: json["link"],
-//     );
+    Datum({
+        this.id,
+        this.schemeName,
+        this.startAge,
+        this.endAge,
+        this.description,
+        this.link,
+    });
 
-//     Map<String, dynamic> toJson() => {
-//         "id": id,
-//         "scheme_name": schemeName,
-//         "start_age": startAge,
-//         "end_age": endAge,
-//         "description": description,
-//         "link": link,
-//     };
-// }
+    factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+        id: json["id"],
+        schemeName: json["scheme_name"],
+        startAge: json["start_age"],
+        endAge: json["end_age"],
+        description: json["description"],
+        link: json["link"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "id": id,
+        "scheme_name": schemeName,
+        "start_age": startAge,
+        "end_age": endAge,
+        "description": description,
+        "link": link,
+    };
+}

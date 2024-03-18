@@ -1,52 +1,52 @@
+
 import 'package:cropmate/global_widgets/govt_scheme_card.dart';
+import 'package:cropmate/presentation/common/govt_scheme_screen/controller/govt_scheme_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class GovtSchemeScreen extends StatelessWidget {
-  const GovtSchemeScreen({super.key});
+  const GovtSchemeScreen({Key? key});
 
   @override
   Widget build(BuildContext context) {
+    final controller =
+        Provider.of<GovtSchemeController>(context, listen: false);
+    controller.fetchGovtSchemes();
     return Scaffold(
       appBar: AppBar(
         title: Text("Govt Scheme's"),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            GovtSchemeCard(
-                title: 'Some Random govt Scheme',
-                description:
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-                link: 'Fake link..........',startAge: 'Start age  23', endAge: ' End age  26',),
-            //should be wrapped with inkwell or something
-            GovtSchemeCard(
-                title: 'Some Random govt Scheme',
-                description:
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-                link: 'Fake link..........',startAge: 'Start age  23', endAge: ' End age  26',),
-            GovtSchemeCard(
-                title: 'Some Random govt Scheme',
-                description:
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-                link: 'Fake link..........',startAge: 'Start age  23', endAge: ' End age  26',),
-            GovtSchemeCard(
-                title: 'Some Random govt Scheme',
-                description:
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-                link: 'Fake link..........',startAge: 'Start age  23', endAge: ' End age  26',),
-            GovtSchemeCard(
-                title: 'Some Random govt Scheme',
-                description:
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-                link: 'Fake link..........',startAge: 'Start age  23', endAge: ' End age  26',),
-            GovtSchemeCard(
-                title: 'Some Random govt Scheme',
-                description:
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-                link: 'Fake link..........',startAge: 'Start age  23', endAge: ' End age  26',),
-          ],
-        ),
+      body: Consumer<GovtSchemeController>(
+        builder: (context, controller, child) {
+          if (controller.isLoading) {
+            return Center(child: CircularProgressIndicator());
+          } else {
+            return ListView.builder(
+              itemCount: controller.govtSchemeModel.data?.length,
+              itemBuilder: (BuildContext context, int index) {
+                return GovtSchemeCard(
+                    title: controller.govtSchemeModel.data?[index].schemeName
+                            .toString() ??
+                        '',
+                    description: controller
+                            .govtSchemeModel.data?[index].description
+                            .toString() ??
+                        '',
+                    link: controller.govtSchemeModel.data?[index].link
+                            .toString() ??
+                        '',
+                    startAge: controller.govtSchemeModel.data?[index].startAge
+                            .toString() ??
+                        '',
+                    endAge: controller.govtSchemeModel.data?[index].endAge
+                            .toString() ??
+                        '');
+              },
+            );
+          }
+        },
       ),
     );
   }
 }
+

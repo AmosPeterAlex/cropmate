@@ -1,4 +1,5 @@
 import 'package:cropmate/presentation/admin/admin_login_screen/controller/admin_login_controller.dart';
+import 'package:cropmate/presentation/common/govt_scheme_screen/controller/govt_scheme_controller.dart';
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
 import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
 import 'package:cropmate/presentation/common/splash_screen/view/splash_screen.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           create: (context) => UserBottomNavController(),
         ),
         ChangeNotifierProvider(
-          create: (context) => HomeScreenController(),
+          create: (context) => FarmerHomeScreenController(),
         ),
         ChangeNotifierProvider(
           create: (context) => UserHarvestedItemScreenController(),
@@ -45,6 +46,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => AdminLoginController(),
         ),
+         ChangeNotifierProvider(
+          create: (context) => GovtSchemeController(),
+        ),
+        
       ],
       child: MaterialApp(
         home: SplashScreen(),
