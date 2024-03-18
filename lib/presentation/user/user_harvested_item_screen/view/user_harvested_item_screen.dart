@@ -37,9 +37,17 @@ class UserHarvestedItemScreen extends StatelessWidget {
               actions: [
                 Padding(
                   padding: EdgeInsets.all(devHeight * 0.01),
-                  child: IconButton( onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>cartScreen()));
-                  }, icon: Icon(CupertinoIcons.cart,),),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => cartScreen()));
+                    },
+                    icon: Icon(
+                      CupertinoIcons.cart,
+                    ),
+                  ),
                 )
               ],
               bottom: TabBar(
@@ -79,15 +87,17 @@ class UserHarvestedItemScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemDetailsScreen()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ItemDetailsScreen()));
                       },
                       child: ItemCard(
                         title: itemList[index].name,
                         imageUrl: itemList[index].image,
                         price: itemList[index].price,
-                        quantity: itemList[index].quantity,
+                        quantity: itemList[index].quantity!.toInt(),
                         item: itemList[index],
-
                       ));
                 }),
           )),

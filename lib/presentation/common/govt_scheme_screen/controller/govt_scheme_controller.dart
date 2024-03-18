@@ -1,6 +1,8 @@
 import 'dart:developer';
 
-import 'package:cropmate/repository/api/common/govt_scheme_screen/service/govt_scheme_service';
+
+
+import 'package:cropmate/repository/api/common/govt_scheme_screen/service/govt_scheme_service.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../repository/api/common/govt_scheme_screen/model/govt_scheme_model.dart';
@@ -17,7 +19,6 @@ class GovtSchemeController with ChangeNotifier {
       var data = await GovtSchemeService.getGovtSchemes();
       if (data != null) {
         govtSchemeModel = GovtSchemeModel.fromJson(data);
-        
       } else {
         log('Failed to fetch government schemes');
       }

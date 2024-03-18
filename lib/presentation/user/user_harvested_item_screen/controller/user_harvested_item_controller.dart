@@ -65,7 +65,7 @@ class UserHarvestedItemScreenController extends ChangeNotifier {
 
   List<Items> get product => _item;
 
-  final List<Items> _cart = [];
+  final List<Items> _cart = []; 
 
   List<Items> get cart => _cart;
   List<String> categorylist = ["Vegitable", "Fruits", "Grains"];
