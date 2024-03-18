@@ -15,7 +15,7 @@ class UserManagementScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body:AdminGetDataController()
-      // Consumer<AdminDataProvider>(
+      // body: Consumer<AdminDataProvider>(
       //   builder: (context, dataProvider, _) {
       //     if (dataProvider.data.isEmpty) {
       //       print(dataProvider.toString());
