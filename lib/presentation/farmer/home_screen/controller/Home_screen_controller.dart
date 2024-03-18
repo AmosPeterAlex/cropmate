@@ -1,3 +1,4 @@
+/*
 import 'package:cropmate/core/constants/image_constants.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -84,6 +85,39 @@ class HomeScreenController extends ChangeNotifier {
       notifyListeners();
     } else {
       _cart.remove(removeProduct);
+      notifyListeners();
+    }
+  }
+}
+*/
+import 'dart:developer';
+
+// import 'package:cropmate/repository/api/common/govt_scheme_screen/service/govt_scheme_service';
+import 'package:cropmate/repository/api/farmer/home_screen/model/home_screen_model.dart';
+import 'package:cropmate/repository/api/farmer/home_screen/service/home_screen_service.dart';
+import 'package:flutter/material.dart';
+
+// import '../../../../repository/api/common/govt_scheme_screen/model/govt_scheme_model.dart';
+
+class FarmerHomeScreenController with ChangeNotifier {
+  late EquipmentListModel equipmentListModel;
+
+  bool isLoading = false;
+
+  void fetchEqpList() async {
+    isLoading = true;
+    notifyListeners();
+    try {
+      var data = await FarmerHomeScreenService.getEqipList();
+      if (data != null) {
+        equipmentListModel = EquipmentListModel.fromJson(data);
+      } else {
+        log('Failed to fetch equipment list');
+      }
+    } catch (e) {
+      log('Error fetching equipment list $e');
+    } finally {
+      isLoading = false;
       notifyListeners();
     }
   }
