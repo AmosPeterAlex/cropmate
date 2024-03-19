@@ -4,16 +4,18 @@ class MaterialButtonWidget extends StatelessWidget {
   final String? buttonText;
   final Color? buttonColor;
   final VoidCallback? onPressed;
-  MaterialButtonWidget({super.key, this.buttonText, this.buttonColor, this.onPressed});
+
+  MaterialButtonWidget(
+      {super.key, this.buttonText, this.buttonColor, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
     var devWidth = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.only(left: 10.0,right: 10),
+      padding: const EdgeInsets.only(left: 10.0, right: 10),
       child: MaterialButton(
-        shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         height: devHeight * .06,
         minWidth: devWidth,
         color: buttonColor,

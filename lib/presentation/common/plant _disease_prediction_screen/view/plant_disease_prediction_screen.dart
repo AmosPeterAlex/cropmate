@@ -292,41 +292,7 @@ class _PlantDiseasePredictionScreenState
                     onPressed: _getImageFromCamera,
                     icon: Icons.camera_alt_outlined,
                     label: 'Camera'),
-                // SizedBox(
-                //   width: devWidth * 0.35,
-                //   height: devHeight * 0.06,
-                //   child: ElevatedButton.icon(
-                //     style: ButtonStyle(
-                //       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                //           borderRadius: BorderRadius.circular(10))),
-                //       backgroundColor:
-                //           MaterialStateProperty.all(Color(0xFFd6ebdc)),
-                //     ),
-                //     onPressed: _getImageFromCamera,
-                //     icon: Icon(Icons.camera_alt_outlined,
-                //         color: ColorConstants.blackColor),
-                //     label: Text(
-                //       'Camera',
-                //       style: TextStyle(color: ColorConstants.blackColor),
-                //     ),
-                //   ),
-                // ),
-                // SizedBox(
-                //   width: devWidth * 0.35,
-                //   height: devHeight * 0.06,
-                //   child: ElevatedButton.icon(
-                //     style: ButtonStyle(
-                //       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                //           borderRadius: BorderRadius.circular(10))),
-                //       backgroundColor:
-                //       MaterialStateProperty.all(Color(0xFFd6ebdc)),
-                //     ),
-                //     onPressed: _getImageFromGallery,
-                //     icon: Icon(Icons.photo, color: ColorConstants.blackColor),
-                //     label: Text('Gallery',
-                //         style: TextStyle(color: ColorConstants.blackColor)),
-                //   ),
-                // ),
+
                 ImageIconButton(width: devWidth * 0.35,
                     height: devHeight * 0.06,
                     onPressed: _getImageFromGallery,

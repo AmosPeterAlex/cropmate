@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ImageIconButton extends StatelessWidget {
   final double width;
   final double height;
-  final VoidCallback onPressed;
+  final Function() onPressed;
   final IconData icon;
   final String label;
   final Color iconColor;
