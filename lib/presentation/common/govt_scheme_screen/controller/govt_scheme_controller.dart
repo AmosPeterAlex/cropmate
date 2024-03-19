@@ -6,6 +6,7 @@ import 'package:cropmate/repository/api/common/govt_scheme_screen/service/govt_s
 import 'package:flutter/material.dart';
 
 import '../../../../repository/api/common/govt_scheme_screen/model/govt_scheme_model.dart';
+import '../../../../repository/api/common/govt_scheme_screen/service/govt_scheme_service.dart';
 
 class GovtSchemeController with ChangeNotifier {
   late GovtSchemeModel govtSchemeModel;

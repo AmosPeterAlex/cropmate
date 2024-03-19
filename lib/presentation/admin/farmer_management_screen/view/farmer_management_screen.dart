@@ -17,7 +17,7 @@ class FarmerManagementScreen extends StatelessWidget {
       body: ListView.builder(
         itemBuilder: (context, index) => ManagementCard(
           name: 'Farmer Name',
-          phoneNumber: '9633780485',
+          email: '9633780485',
           onCardClick: () {
             showModalBottomSheet(
                 backgroundColor: ColorConstants.lightGreenColor,
