@@ -6,15 +6,15 @@ import 'package:flutter/material.dart';
 class GovtSchemeManagementController extends ChangeNotifier {
   void onGovtSchemeAdd({
     required String schemeName,
-    required int startAge,
-    required int endAge,
+    required String startAge,
+    required String endAge,
     required String description,
     required String link,
   }) {
     var data = {
       "scheme_name": schemeName,
-      "start_age": startAge.toString(),
-      "end_age": endAge.toString(),
+      "start_age": startAge,
+      "end_age": endAge,
       "description": description,
       "link": link,
     };

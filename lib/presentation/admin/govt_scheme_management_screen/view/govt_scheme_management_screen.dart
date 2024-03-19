@@ -58,8 +58,8 @@ class GovtSchemeManagementScreen extends StatelessWidget {
                           listen: false)
                       .onGovtSchemeAdd(
                           schemeName: schemeNameController.text,
-                          startAge: int.parse(startAgeController.text),
-                          endAge: int.parse(endAgeController.text),
+                          startAge: startAgeController.text,
+                          endAge: endAgeController.text,
                           description: descriptionController.text,
                           link: linkController.text);
                   schemeNameController.clear();
