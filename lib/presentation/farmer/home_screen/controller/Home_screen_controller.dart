@@ -5,8 +5,7 @@ import 'package:cropmate/repository/api/farmer/home_screen/service/home_screen_s
 import 'package:flutter/material.dart';
 
 class FarmerHomeScreenController with ChangeNotifier {
-  EquipmentListModel equipmentListModel =
-      EquipmentListModel(); // Initialize with an empty model
+  EquipmentListModel equipmentListModel = EquipmentListModel(); // Initialize with an empty model
 
   bool isLoading = false;
 
