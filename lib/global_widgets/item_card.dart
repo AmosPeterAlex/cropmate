@@ -1,6 +1,8 @@
+import 'package:cropmate/app_config/app_config.dart';
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/presentation/user/user_harvested_item_screen/controller/user_harvested_item_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../repository/api/common/cart_page/model/cart_page_modal.dart';
@@ -24,12 +26,14 @@ class ItemCard extends StatelessWidget {
   final String? contant;
   final String? sourceName;
   final double? price;
-  final double? quantity;
+  final int? quantity;
   final Items? item;
 
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
+
+    final media = AppConfig.mediaurl + imageUrl!;
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -43,7 +47,7 @@ class ItemCard extends StatelessWidget {
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
-                    image: AssetImage(imageUrl!), fit: BoxFit.cover)),
+                    image: NetworkImage(media), fit: BoxFit.cover)),
           ),
           SizedBox(
             height: 10,
@@ -60,7 +64,7 @@ class ItemCard extends StatelessWidget {
                       fontSize: devHeight * 0.02, fontWeight: FontWeight.w600),
                 ),
               ),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("$price/"),
@@ -69,12 +73,12 @@ class ItemCard extends StatelessWidget {
                   ),
                 ],
               ),
-              SingleChildScrollView(
-                child: Text(
-                  "$sourceName",
-                ),
-                scrollDirection: Axis.horizontal,
-              ),
+              // SingleChildScrollView(
+              //   child: Text(
+              //     "$sourceName",
+              //   ),
+              //   scrollDirection: Axis.horizontal,
+              // ),
               MaterialButton(
                 color: ColorConstants.primaryColor,
                 onPressed: () {

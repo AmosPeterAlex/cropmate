@@ -22,7 +22,7 @@ class GovtSchemeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
-     var devWidth = MediaQuery.of(context).size.width;
+    var devWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: EdgeInsets.only(left: 12, right: 12, bottom: 4),
       child: SizedBox(
@@ -37,17 +37,21 @@ class GovtSchemeCard extends StatelessWidget {
                   title,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
-                Row(children: [
-                  Text(
-                    startAge,
-                    style: TextStyle(fontStyle: FontStyle.italic),
-                  ),
-                  SizedBox(width: devWidth*0.02,),
-                  Text(
-                    endAge,
-                    style: TextStyle(fontStyle: FontStyle.italic),
-                  ),
-                ],),
+                Row(
+                  children: [
+                    Text(
+                      startAge,
+                      style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                    SizedBox(
+                      width: devWidth * 0.02,
+                    ),
+                    Text(
+                      endAge,
+                      style: TextStyle(fontStyle: FontStyle.italic),
+                    ),
+                  ],
+                ),
                 InkWell(
                   child: Text(
                     link,
@@ -55,7 +59,11 @@ class GovtSchemeCard extends StatelessWidget {
                   ),
                   onTap: () {},
                 ),
-                Text(description),
+                Text(
+                  description,
+                  maxLines: 5,
+                  overflow: TextOverflow.ellipsis,
+                ),
                 //start age and end age add akenm
               ],
             )),
