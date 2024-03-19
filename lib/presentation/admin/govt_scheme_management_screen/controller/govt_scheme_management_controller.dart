@@ -1,6 +1,4 @@
-import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
 import 'package:cropmate/repository/api/admin/govt_scheme_management/service/govt_scheme_mangement_service.dart';
-import 'package:cropmate/repository/api/common/registration_screen/service/registartion_screen_service.dart';
 import 'package:flutter/material.dart';
 
 class GovtSchemeManagementController extends ChangeNotifier {

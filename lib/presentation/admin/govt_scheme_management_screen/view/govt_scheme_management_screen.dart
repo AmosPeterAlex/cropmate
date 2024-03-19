@@ -51,6 +51,9 @@ class GovtSchemeManagementScreen extends StatelessWidget {
               hintText: 'Link',
               controller: linkController,
             ),
+            SizedBox(
+              height: 10,
+            ),
             MaterialButtonWidget(
                 buttonText: 'Add Scheme',
                 onPressed: () {
@@ -68,7 +71,17 @@ class GovtSchemeManagementScreen extends StatelessWidget {
                   descriptionController.clear();
                   linkController.clear();
                 },
-                buttonColor: ColorConstants.primaryColor)
+                buttonColor: ColorConstants.primaryColor),
+            SizedBox(
+              height: 20,
+            ),
+            MaterialButtonWidget(
+              buttonColor: ColorConstants.primaryColor,
+              buttonText: 'View Schemes',
+              onPressed: () {
+                //navigate to admin govt scheme view
+              },
+            )
           ],
         ),
       ),
