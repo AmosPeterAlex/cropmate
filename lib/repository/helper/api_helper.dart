@@ -69,8 +69,8 @@ class ApiHelper {
         return decodedData;
       }
     } catch (e) {
-      var eror = e.toString();
-      log("Error: $eror");
+      var error = e.toString();
+      log(">>>>>>>>>>>>: $error");
     }
   }
 }
