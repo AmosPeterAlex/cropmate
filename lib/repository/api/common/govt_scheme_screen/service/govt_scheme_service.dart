@@ -6,7 +6,7 @@ class GovtSchemeService {
   static Future<dynamic> getGovtSchemes() async {
     try {
       var decodedData = await ApiHelper.getData(endPoint: "cropmapp/allschemeview/");
-      log(decodedData.toString());
+      // log(decodedData.toString());
       if (decodedData["status"] == 1) {
         log("Data fetched successfully");
         return decodedData["data"];

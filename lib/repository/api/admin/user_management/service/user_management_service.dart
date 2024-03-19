@@ -27,14 +27,14 @@ class AdminGetDataService {
 
 
  */
-
+/*
 import 'dart:convert';
 import 'dart:developer';
 import 'package:http/http.dart' as http;
 
 import '../../../../../app_config/app_config.dart';
 
-class ApiService {
+class UserManagementService {
   static Future<Map<String, dynamic>> getData({
     required String endPoint,
     Map<String, String>? headers,
@@ -69,5 +69,46 @@ class ApiService {
   }
 }
 
+
+ */
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+import '../../../../../app_config/app_config.dart';
+
+class UserManagementService {
+  static Future<Map<String, dynamic>> getData({
+    required String endPoint,
+    Map<String, String>? headers,
+  }) async {
+    final url = Uri.parse(AppConfig.baseUrl + endPoint);
+
+    try {
+      final response = await http.get(url, headers: headers);
+
+      if (response.statusCode == 200) {
+        final decodedData = jsonDecode(response.body);
+
+        return {
+          "data": decodedData,
+          "status": 1,
+        };
+      } else {
+        final decodedData = jsonDecode(response.body);
+        print(decodedData.toString());
+        return {
+          "data": null,
+          "status": 0,
+        };
+      }
+    } catch (e) {
+      // Handle exceptions
+      return {
+        "data": null,
+        "status": 0,
+      };
+    }
+  }
+}
 
 

@@ -47,10 +47,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => AdminLoginController(),
         ),
-         ChangeNotifierProvider(
+        ChangeNotifierProvider(
           create: (context) => GovtSchemeController(),
         ),
-        
+        ChangeNotifierProvider(create:
+        (context)=>UserManagementController())
+
       ],
       child: MaterialApp(
         home: SplashScreen(),
