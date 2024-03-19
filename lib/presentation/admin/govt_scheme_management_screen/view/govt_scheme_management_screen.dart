@@ -1,6 +1,7 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
+import 'package:cropmate/presentation/admin/govt_scheme_delete/view/govt_scheme_delete.dart';
 import 'package:cropmate/presentation/admin/govt_scheme_management_screen/controller/govt_scheme_management_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -80,6 +81,10 @@ class GovtSchemeManagementScreen extends StatelessWidget {
               buttonText: 'View Schemes',
               onPressed: () {
                 //navigate to admin govt scheme view
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => GovtSchemeDeleteScreen()));
               },
             )
           ],
