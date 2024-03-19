@@ -1,10 +1,10 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/farmer_widgets/Profile_listtile.dart';
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
-import 'package:cropmate/presentation/farmer/view_profile_screen/view/view_profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/govt_scheme_screen/view/govt_scheme_screen.dart';
+import '../../../common/view_profile_screen/view/view_profile_screen.dart';
 
 
 class UserProfileScreen extends StatelessWidget {
