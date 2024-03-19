@@ -3,33 +3,31 @@ import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../app_config/app_config.dart';
+
 class ItemDetailsScreen extends StatefulWidget {
+  final String? title;
+  final String? description;
+  final String? imageUrl;
+
+  final String? sourceName;
+  final double? price;
+  int quantity = 1;
+
+  ItemDetailsScreen(
+      this.title, this.description, this.imageUrl, this.sourceName, this.price);
+
   @override
   _ItemDetailsScreenState createState() => _ItemDetailsScreenState();
 }
 
 class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
-  final String? title;
-  final String? description;
-  final String? imageUrl;
-  final String? contant;
-  final String? sourceName;
-  int quantity = 1;
-  double unitPrice = 10.0; // Replace with your actual unit price
-
-  _ItemDetailsScreenState({
-    this.title,
-    this.description,
-    this.imageUrl,
-    this.contant,
-    this.sourceName,
-  });
-
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
     var devWidth = MediaQuery.of(context).size.width;
-    double totalPrice = unitPrice * quantity;
+    double totalPrice = widget.price! * widget.quantity;
+    final media = AppConfig.mediaurl + widget.imageUrl!;
 
     return SafeArea(
       child: Scaffold(
@@ -51,6 +49,9 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                   height: MediaQuery.sizeOf(context).height * 40 / 100,
                   decoration: BoxDecoration(
                     color: Colors.green,
+                    image: DecorationImage(
+                        image: NetworkImage(media),
+                        fit: BoxFit.cover),
                     borderRadius: BorderRadiusDirectional.circular(10),
                   ),
                 ),
@@ -61,19 +62,19 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Title",
+                      widget.title!,
                       style: TextStyle(
                           fontSize: devHeight * 0.04,
                           fontWeight: FontWeight.w700),
                     ),
                     Text(
-                      "Description",
+                      widget.description!,
                       style: TextStyle(
                         fontSize: devHeight * 0.03,
                       ),
                     ),
                     Text(
-                      "From",
+                      widget.sourceName!,
                       style: TextStyle(
                         fontSize: devHeight * 0.02,
                       ),
@@ -96,15 +97,15 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         IconButton(
                           onPressed: () {
                             setState(() {
-                              if (quantity > 1) {
-                                quantity--;
+                              if (widget.quantity > 1) {
+                                widget.quantity--;
                               }
                             });
                           },
                           icon: Icon(Icons.remove),
                         ),
                         Text(
-                          "$quantity",
+                          "${widget.quantity}",
                           style: TextStyle(
                             fontSize: devHeight * 0.03,
                           ),
@@ -112,7 +113,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         IconButton(
                           onPressed: () {
                             setState(() {
-                              quantity++;
+                              widget.quantity++;
                             });
                           },
                           icon: Icon(Icons.add),

@@ -82,9 +82,9 @@ class ItemCard extends StatelessWidget {
               MaterialButton(
                 color: ColorConstants.primaryColor,
                 onPressed: () {
-                  context
-                      .read<UserHarvestedItemScreenController>()
-                      .addToList(item!);
+                  // context
+                  //     .read<UserHarvestedItemScreenController>()
+                  //     .addToList(item!);
                 },
                 child: Text(
                   "ADD TO CART",

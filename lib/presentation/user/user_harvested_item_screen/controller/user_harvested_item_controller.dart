@@ -1,101 +1,31 @@
-import 'package:cropmate/core/constants/image_constants.dart';
+import 'dart:developer';
+
+import 'package:cropmate/repository/api/user/user_harvested_item_screen/modal/user_harvested_item_screen_modal.dart';
+import 'package:cropmate/repository/api/user/user_harvested_item_screen/service/user_harvested_item_screen_service.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../../../repository/api/common/cart_page/model/cart_page_modal.dart';
+class UserHarvestedItemScreenController with ChangeNotifier {
+  FarmerProductModal farmerProductModal= FarmerProductModal();// Initialize with an empty model
+
+  bool isLoading = false;
 
 
-
-List<Items> itemList = [
-  Items(
-      name: "Tomoto",
-      image: ImageConstants.tomotoicon,
-      price: 40,
-      description: "adipoli tomoto",
-      sourceName: "farmer",
-      quantity: 1),
-  Items(
-      name: "Tomoto",
-      image: ImageConstants.tomotoicon,
-      price: 40,
-      description: "adipoli tomoto",
-      sourceName: "farmer",
-      quantity: 1),
-  Items(
-      name: "Tomoto",
-      image: ImageConstants.tomotoicon,
-      price: 40,
-      description: "adipoli tomoto",
-      sourceName: "farmer",
-      quantity: 1),
-  Items(
-      name: "Tomoto",
-      image: ImageConstants.tomotoicon,
-      price: 40,
-      description: "adipoli tomoto",
-      sourceName: "farmer",
-      quantity: 1),
-  Items(
-      name: "Tomoto",
-      image: ImageConstants.tomotoicon,
-      price: 40,
-      description: "adipoli tomoto",
-      sourceName: "farmer",
-      quantity: 1),
-  Items(
-      name: "Tomoto",
-      image: ImageConstants.tomotoicon,
-      price: 40,
-      description: "adipoli tomoto",
-      sourceName: "farmer",
-      quantity: 1),
-  Items(
-      name: "Tomoto",
-      image: ImageConstants.tomotoicon,
-      price: 40,
-      description: "adipoli tomoto",
-      sourceName: "farmer",
-      quantity: 1)
-];
-
-class UserHarvestedItemScreenController extends ChangeNotifier {
-  int totalprice = 0;
-  int total = 0;
-
-  final List<Items> _item = itemList;
-
-  List<Items> get product => _item;
-
-  final List<Items> _cart = []; 
-
-  List<Items> get cart => _cart;
-  List<String> categorylist = ["Vegitable", "Fruits", "Grains"];
-  String category = "Vegitables";
-  var screens = [];
-
-  onTap({required index}) {
-    category = categorylist[index].toLowerCase();
-    print(category);
+  fetchProduct() async {
+    isLoading = true;
     notifyListeners();
-  }
-
-  void addToList(Items productFromCart) {
-    if (productFromCart.count != 0) {
-      productFromCart.count += 1;
+    try {
+      var data = await UserHarvestedItemScreenService.getprodcutList();
+      if (data != null) {
+        farmerProductModal = FarmerProductModal.fromJson(data);
+      } else {
+        log('Failed to fetch equipment list');
+      }
+    } catch (e) {
+      log('Error fetching equipment list $e');
+    } finally {
+      isLoading = false;
       notifyListeners();
-    } else {
-      _cart.add(productFromCart);
-      productFromCart.count += 1;
-      notifyListeners();
-    }
-  }
-
-  void removeFromList(Items removeProduct) {
-    if (removeProduct.count > 1) {
-      removeProduct.count -= 1;
-      notifyListeners();
-    } else {
-      _cart.remove(removeProduct);
-      notifyListeners();
+      print('finally working');
     }
   }
 }
