@@ -1,10 +1,7 @@
-// To parse this JSON data, do
-//
-//     final userManage = userManageFromJson(jsonString);
-
 import 'dart:convert';
 
-UserManage userManageFromJson(String str) => UserManage.fromJson(json.decode(str));
+UserManage userManageFromJson(String str) =>
+    UserManage.fromJson(json.decode(str));
 
 String userManageToJson(UserManage data) => json.encode(data.toJson());
 
@@ -18,14 +15,18 @@ class UserManage {
   });
 
   factory UserManage.fromJson(Map<String, dynamic> json) => UserManage(
-    status: json["status"],
-    data: json["data"] == null ? [] : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
-  );
+        status: json["status"],
+        data: json["data"] == null
+            ? []
+            : List<Datum>.from(json["data"]!.map((x) => Datum.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "status": status,
-    "data": data == null ? [] : List<dynamic>.from(data!.map((x) => x.toJson())),
-  };
+        "status": status,
+        "data": data == null
+            ? []
+            : List<dynamic>.from(data!.map((x) => x.toJson())),
+      };
 }
 
 class Datum {
@@ -48,37 +49,30 @@ class Datum {
   });
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-    id: json["id"],
-    username: json["username"],
-    email: json["email"],
-    userType: userTypeValues.map[json["user_type"]]!,
-    phone: json["phone"],
-    address: json["address"],
-    location: json["location"],
-  );
+        id: json["id"],
+        username: json["username"],
+        email: json["email"],
+        userType: userTypeValues.map[json["user_type"]]!,
+        phone: json["phone"],
+        address: json["address"],
+        location: json["location"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "username": username,
-    "email": email,
-    "user_type": userTypeValues.reverse[userType],
-    "phone": phone,
-    "address": address,
-    "location": location,
-  };
+        "id": id,
+        "username": username,
+        "email": email,
+        "user_type": userTypeValues.reverse[userType],
+        "phone": phone,
+        "address": address,
+        "location": location,
+      };
 }
 
-enum UserType {
-  EMPTY,
-  FARMER,
-  USER
-}
+enum UserType { EMPTY, FARMER, USER }
 
-final userTypeValues = EnumValues({
-  "": UserType.EMPTY,
-  "Farmer": UserType.FARMER,
-  "User": UserType.USER
-});
+final userTypeValues = EnumValues(
+    {"": UserType.EMPTY, "Farmer": UserType.FARMER, "User": UserType.USER});
 
 class EnumValues<T> {
   Map<String, T> map;

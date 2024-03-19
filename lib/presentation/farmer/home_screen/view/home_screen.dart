@@ -1,5 +1,4 @@
 import 'package:cropmate/presentation/farmer/home_screen/controller/Home_screen_controller.dart';
-import 'package:cropmate/repository/api/farmer/home_screen/model/home_screen_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
