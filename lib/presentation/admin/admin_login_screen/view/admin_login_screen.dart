@@ -46,15 +46,15 @@ class _LoginScreenState extends State<AdminLoginScreen> {
                 hintText: "Password",
                 controller: passController,
               ),
-              Align(
-                alignment: Alignment.topRight,
-                child: InkWell(
-                  onTap: () {},
-                  child: Text('Forgot Password?',
-                      style: TextStyle(
-                          fontSize: 16, color: ColorConstants.blackColor)),
-                ),
-              ),
+              // Align(
+              //   alignment: Alignment.topRight,
+              //   child: InkWell(
+              //     onTap: () {},
+              //     child: Text('Forgot Password?',
+              //         style: TextStyle(
+              //             fontSize: 16, color: ColorConstants.blackColor)),
+              //   ),
+              // ),
               SizedBox(
                 height: 15,
               ),
