@@ -13,7 +13,7 @@ class ViewProfileScreen extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text("name  :name"),
               Text("Email  :name"),
