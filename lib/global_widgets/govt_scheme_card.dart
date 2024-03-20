@@ -55,7 +55,7 @@ class GovtSchemeCard extends StatelessWidget {
                 InkWell(
                   child: Text(
                     link,
-                    style: TextStyle(fontStyle: FontStyle.italic),
+                    style: TextStyle(fontStyle: FontStyle.italic,color: Colors.blue),
                   ),
                   onTap: () {},
                 ),

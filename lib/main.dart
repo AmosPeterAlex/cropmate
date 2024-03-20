@@ -6,10 +6,12 @@ import 'package:cropmate/presentation/admin/user_management_screen/controller/us
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
 import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
 import 'package:cropmate/presentation/common/splash_screen/view/splash_screen.dart';
+import 'package:cropmate/presentation/common/view_profile_screen/controller/view_profile_controller.dart';
 import 'package:cropmate/presentation/farmer/add_harvested_item_screen/controller/add_harvested_item_controller.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/controller/bottom_navigation_controller.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/view/bottom_navigation_screen.dart';
 import 'package:cropmate/presentation/farmer/home_screen/controller/Home_screen_controller.dart';
+import 'package:cropmate/presentation/farmer/soil_analysis_Screen/controller/soil_analysis_controller.dart';
 import 'package:cropmate/presentation/user/user_bottom_navigation_screen/controller/user_bottom_nav_screen_controller.dart';
 import 'package:cropmate/presentation/user/user_bottom_navigation_screen/view/user_bottom_nav_screen.dart';
 import 'package:cropmate/presentation/user/user_harvested_item_screen/controller/user_harvested_item_controller.dart';
@@ -56,7 +58,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => UserManagementController()),
         ChangeNotifierProvider(
             create: (context) => GovtSchemeManagementController()),
-        ChangeNotifierProvider(create: (context) => AgrEqpAddController())
+        ChangeNotifierProvider(create: (context) => AgrEqpAddController()),
+        ChangeNotifierProvider(create: (context) => SoilAnalysisController()),
+        ChangeNotifierProvider(create: (context) => AddHarvestedItemController()),
+        ChangeNotifierProvider(create: (context)=> ViewProfileController())
+
       ],
       child: MaterialApp(
         home: SplashScreen(),
