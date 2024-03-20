@@ -29,27 +29,21 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
             Text("View Profile", style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
-      body: Consumer<ViewProfileController>(
-          builder: (context, controller, child) {
-        return Center(
-          child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text("name  :name"),
-                Text("Email  :name"),
-                Text("Phone  :name"),
-                Text(
-                  "Address  :name",
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Text("Location  :name"),
-              ],
-            ),
+      body: Center(
+        child: Container(
+          child: Column(mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text("name  :name"),
+              Text("Email  :name"),
+              Text("Phone  :name"),
+              Text("Address  :name"),
+              Text("Location  :name"),
+
+            ],
           ),
-        );
-      }),
+        ),
+      ),
+
     );
   }
 }
