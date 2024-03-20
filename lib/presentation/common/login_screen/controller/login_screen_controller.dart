@@ -1,4 +1,5 @@
 import 'dart:convert'; // Required for JSON decoding
+import 'package:cropmate/app_config/app_config.dart';
 import 'package:cropmate/presentation/admin/home_screen/view/home_screen.dart';
 import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/view/bottom_navigation_screen.dart';
@@ -46,14 +47,14 @@ class LoginScreenController extends ChangeNotifier {
   // Function to save decodedData and token to SharedPreferences
   Future<void> saveDataToPrefs(Map<String, dynamic> decodedData) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('decodedData', jsonEncode(decodedData));
+    await prefs.setString(AppConfig.profileData, jsonEncode(decodedData));
     await prefs.setString('token', decodedData['token']);
   }
 
   // Function to clear token from SharedPreferences (Logout)
   Future<void> logout(BuildContext context) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.remove('decodedData');
+    await prefs.remove(AppConfig.profileData);
     await prefs.remove('token');
     print(prefs.toString());
     // Navigate to login screen (Assuming you have a login screen as the root)

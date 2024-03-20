@@ -48,7 +48,7 @@ class ApiHelper {
     log("Apihelper>postData 5");
     log("$body");
 
-    final url = Uri.parse(finalurl ?? AppConfig.baseUrl + endPoint);
+    final url = Uri.parse(AppConfig.baseUrl + endPoint);
     // final url = Uri.parse("http://10.11.0.236:8000/cropmapp/register/");
     //code from gpt
     log("Request URL: $url");

@@ -8,7 +8,7 @@ class AdminLoginService {
       var decodedData = await ApiHelper.postData(
           endPoint: "cropmapp/superuser-login/",
           body: data,
-          finalurl: 'http://10.0.2.2:8000/cropmapp/superuser-login/');
+          finalurl: 'http://10.11.0.164:8000/cropmapp/superuser-login/');
       log(decodedData.toString());
       if (decodedData["status"] == 1) {
         log("success in service class ");

@@ -123,6 +123,7 @@ class _AddHarvestedItemScreenState extends State<AddHarvestedItemScreen> {
   var descriptionController = TextEditingController();
   var isAvailableController = TextEditingController();
   File? image;
+  String _selectedName = "Fruits";
 
   Future<void> _getImage(ImageSource source) async {
     final pickedFile = await ImagePicker().pickImage(source: source);
@@ -149,13 +150,61 @@ class _AddHarvestedItemScreenState extends State<AddHarvestedItemScreen> {
               EdgeInsets.only(left: devWidth * 0.02, right: devWidth * 0.02),
           children: [
             TextFieldScreen(
-              hintText: "Created by",
+              hintText: "Farmer Name",
               controller: createdByController,
             ),
-            TextFieldScreen(
-              hintText: "Crop type",
-              controller: cropTypeController,
+
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: devWidth * 0.1),
+            //   child: DropdownButton<String>(
+            //     value: _selectedName,
+            //     onChanged: (String? newValue) {
+            //       setState(() {
+            //         _selectedName = newValue!;
+            //       });
+            //     },
+            //     items: <String>["Fruits", "Vegetables","Grains"].map((String value) {
+            //       return DropdownMenuItem<String>(
+            //         value: value,
+            //         child: Text(value),
+            //       );
+            //     }).toList(),                  ),
+            // ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: devWidth * 0.02, vertical: devHeight * 0.01),
+              child: Container(
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  // Adjust border color here
+                  borderRadius:
+                      BorderRadius.circular(8.0), // Adjust border radius here
+                ),
+                child: DropdownButton<String>(
+                  isExpanded: true,
+                  padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  value: _selectedName,
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      _selectedName = newValue!;
+                    });
+                  },
+                  style: TextStyle(
+                    color: Colors.black, // Adjust text color here
+                    fontSize: 16.0, // Adjust font size here
+                  ),
+                  items: <String>["Fruits", "Vegetables", "Grains"]
+                      .map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
             ),
+
             TextFieldScreen(
               hintText: "Crop name",
               controller: cropNameController,
@@ -215,13 +264,13 @@ class _AddHarvestedItemScreenState extends State<AddHarvestedItemScreen> {
                 Provider.of<AddHarvestedItemController>(context, listen: false)
                     .onAdd(
                   createdBy: createdByController.text,
-                  cropType: cropTypeController.text,
+                  cropType: _selectedName,
                   cropName: cropNameController.text,
                   price: double.parse(priceController.text),
                   quantity: int.parse(quantityController.text),
                   description: descriptionController.text,
                   // imageToAdd: image
-                   isAvailable: isAvailableController.text,
+                  isAvailable: isAvailableController.text,
                 );
                 // createdByController.clear();
                 // cropTypeController.clear();
