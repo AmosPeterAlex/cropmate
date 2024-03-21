@@ -16,7 +16,7 @@ class ApiHelper {
     log("ApiHelper>getData");
     final url = Uri.parse(AppConfig.baseUrl + endPoint);
     try {
-      var response = await http.get(url);
+      var response = await http.get(url,headers: header);
       log("Api Called => status code=${response.statusCode}");
       if (response.statusCode == 200) {
         var decodedData = jsonDecode(response.body);

@@ -8,6 +8,7 @@ class ViewProfileService {
     try {
       var decodedData = await ApiHelper.getData(
           endPoint: "cropmapp/profile/$id", header: header);
+      return decodedData;
     } catch (e) {
       log("$e");
     }
