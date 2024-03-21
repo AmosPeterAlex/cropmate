@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
           //   child: profilecard(text: text, actions: actions, icon: icon, devHeight: devHeight),
           // ),
           ProfileListTile(
-            text: "Update profile",
+            text: "View profile",
             icon: Icon(Icons.person),
             onTileClick: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => ViewProfileScreen())),

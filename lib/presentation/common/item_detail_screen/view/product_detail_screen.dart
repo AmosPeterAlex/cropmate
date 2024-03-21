@@ -51,7 +51,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                   decoration: BoxDecoration(
                     color: Colors.green,
                     image: DecorationImage(
-                        image: NetworkImage(media),
+                        image: NetworkImage(media??"assets/images/hammer.jpg"),
                         fit: BoxFit.cover),
                     borderRadius: BorderRadiusDirectional.circular(10),
                   ),
