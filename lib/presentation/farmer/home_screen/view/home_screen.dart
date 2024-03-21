@@ -24,14 +24,7 @@ class HomeScreen extends StatelessWidget {
             title: CropMateIconWidget(),
             centerTitle: true,
             toolbarHeight: devHeight * .1,
-            // actions: [
-            //   IconButton(
-            //       onPressed: () {
-            //         // Navigator.push(context,
-            //         //     MaterialPageRoute(builder: (context) => cartScreen()));
-            //       },
-            //       icon: Icon(CupertinoIcons.cart_badge_plus))
-            // ],
+            //
           ),
           body: Consumer<FarmerHomeScreenController>(
               builder: (context, controller, child) =>

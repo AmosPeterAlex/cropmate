@@ -82,7 +82,8 @@ class _SoilAnalysisScreenState extends State<SoilAnalysisScreen> {
             ),
             MaterialButtonWidget(
               onPressed: () async {
-                SoilAnalysisController soilController = Provider.of<SoilAnalysisController>(context, listen: false);
+                SoilAnalysisController soilController =
+                    Provider.of<SoilAnalysisController>(context, listen: false);
                 await soilController.getSoilReport(
                   N: int.parse(nCont.text),
                   P: int.parse(pCont.text),
@@ -93,11 +94,13 @@ class _SoilAnalysisScreenState extends State<SoilAnalysisScreen> {
                   rain: double.parse(rainCont.text),
                   context: context,
                 );
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(soilController.message ?? 'Error occurred'),
-                  ),
-                );
+                nCont.clear();
+                phCont.clear();
+                kCont.clear();
+                tempCont.clear();
+                humidityCont.clear();
+                rainCont.clear();
+                phCont.clear();
               },
 
               /*

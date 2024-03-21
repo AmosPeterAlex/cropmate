@@ -71,9 +71,12 @@ class SoilAnalysisController extends ChangeNotifier {
  */
 import 'dart:developer';
 
+import 'package:cropmate/core/app_utils/app_utils.dart';
+import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../repository/api/farmer/soil_analysis_screen/service/soil_analysis_service.dart';
+import '../../soil_analysis_result_screen/view/soil_analysis_result_screen.dart';
 
 /*
 class SoilAnalysisController extends ChangeNotifier {
@@ -193,13 +196,15 @@ class SoilAnalysisController extends ChangeNotifier {
 
       // Check if the status is 1, indicating a successful response
       if (decodedData["status"] == 1) {
+        // Navigator.push(context, MaterialPageRoute(builder: (context)=>SoilAnalysisResultScreen(text: decodedData["data"]["The crop suitable for the condition"])));
         // If successful, set the message and display a snackbar with the result
-        message = decodedData["data"];
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(message ?? "No data available"),
-          ),
-        );
+        message = decodedData["data"]["The crop suitable for the condition"];
+        AppUtils.oneTimeSnackBar(
+            "The crop suitable for the condition:  ${message}",
+            context: context,
+            time: 5,
+            bgColor: ColorConstants.primaryColor);
+
         return message;
       } else {
         // If the status is not 1, indicating an error response
@@ -218,6 +223,7 @@ class SoilAnalysisController extends ChangeNotifier {
       return null; // or return some default error message
     }
   }
+
 /*
     try {
       var decodedData = await SoilAnalysisService.getSoilAnalysis(data);
