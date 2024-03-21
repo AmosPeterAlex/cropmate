@@ -1,6 +1,7 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/farmer_widgets/Profile_listtile.dart';
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
+import 'package:cropmate/presentation/common/reset_password_screen/view/reset_password_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/govt_scheme_screen/view/govt_scheme_screen.dart';
@@ -45,6 +46,12 @@ class ProfileScreen extends StatelessWidget {
             icon: Icon(Icons.view_agenda),
             onTileClick: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => SoilAnalysisScreen())),
+          ),
+          ProfileListTile(
+            text: "Reset password",
+            icon: Icon(Icons.lock),
+            onTileClick: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => ResetPasswordScreen())),
           ),
           // ProfileListTile(
           //   text: "Feedback",

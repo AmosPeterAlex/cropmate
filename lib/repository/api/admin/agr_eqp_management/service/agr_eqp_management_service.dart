@@ -10,7 +10,7 @@ class AgrEqpManagementService {
           endPoint: "cropmapp/equipmentadd/",
           body: data,
           // finalurl: 'http://10.0.2.2:8000/cropmapp/equipmentadd/');
-          finalurl: 'http://10.11.0.164:8000/cropmapp/equipmentadd/');
+          finalUrl: 'http://10.11.0.164:8000/cropmapp/equipmentadd/');
       log(decodedData.toString());
       if (decodedData["status"] == 1) {
         return decodedData;

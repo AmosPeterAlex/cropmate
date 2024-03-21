@@ -9,7 +9,7 @@ class LoginScreenService {
           endPoint: "cropmapp/login/",
           body: data,
           // finalurl: 'http://10.0.2.2:8000/cropmapp/login/');
-          finalurl: 'http://10.11.0.164:8000/cropmapp/login/');
+          finalUrl: 'http://10.11.0.164:8000/cropmapp/login/');
 
       log(decodedData.toString());//edh
       if (decodedData["status"] == 1) {

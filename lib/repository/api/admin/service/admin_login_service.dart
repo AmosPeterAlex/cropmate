@@ -9,7 +9,7 @@ class AdminLoginService {
           endPoint: "cropmapp/superuser-login/",
           body: data,
           // finalurl: 'http://10.11.0.164:8000/cropmapp/superuser-login/');
-          finalurl: 'http://10.11.0.164:8000/cropmapp/superuser-login/');
+          finalUrl: 'http://10.11.0.164:8000/cropmapp/superuser-login/');
 
       log(decodedData.toString());
       if (decodedData["status"] == 1) {

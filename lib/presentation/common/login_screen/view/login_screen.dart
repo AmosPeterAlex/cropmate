@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/presentation/admin/admin_login_screen/view/admin_login_screen.dart';
+import 'package:cropmate/presentation/common/forgot_password_screen/view/forgot_password_screen.dart';
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
@@ -70,7 +71,9 @@ class _LoginScreenState extends State<LoginScreen> {
               Align(
                 alignment: Alignment.topRight,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgotPasswordScreen()));
+                  },
                   child: Text('Forgot Password?',
                       style: TextStyle(
                           fontSize: 16, color: ColorConstants.blackColor)),

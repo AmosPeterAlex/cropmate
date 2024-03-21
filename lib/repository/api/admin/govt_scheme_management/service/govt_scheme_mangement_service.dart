@@ -10,7 +10,7 @@ class GovtSchemeManagementService {
           endPoint: "cropmapp/schemesadd/",
           body: data,
           // finalurl: 'http://10.0.2.2:8000/cropmapp/schemesadd/');
-          finalurl: 'http://10.11.0.164:8000/cropmapp/schemesadd/');
+          finalUrl: 'http://10.11.0.164:8000/cropmapp/schemesadd/');
       log(decodedData.toString());
       if (decodedData["status"] == 1) {
         return decodedData;

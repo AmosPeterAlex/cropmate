@@ -24,61 +24,54 @@ class HomeScreen extends StatelessWidget {
             title: CropMateIconWidget(),
             centerTitle: true,
             toolbarHeight: devHeight * .1,
-            actions: [
-              IconButton(
-                  onPressed: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => cartScreen()));
-                  },
-                  icon: Icon(CupertinoIcons.cart_badge_plus))
-            ],
+            // actions: [
+            //   IconButton(
+            //       onPressed: () {
+            //         // Navigator.push(context,
+            //         //     MaterialPageRoute(builder: (context) => cartScreen()));
+            //       },
+            //       icon: Icon(CupertinoIcons.cart_badge_plus))
+            // ],
           ),
           body: Consumer<FarmerHomeScreenController>(
-              builder: (context, controller, child) => controller.isLoading ==
-                      true
-                  ? Center(
-                      child: CircularProgressIndicator(),
-                    )
-                  : Padding(
-                      padding: EdgeInsets.all(devHeight * 0.01),
-                      child: GridView.builder(
-                        itemCount: controller.equipmentListModel.data?.length,
-                        shrinkWrap: true,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            childAspectRatio: .58,
-                            crossAxisCount: 2,
-                            crossAxisSpacing: devHeight * .008,
-                            mainAxisSpacing: devWidth * 0.02),
-                        itemBuilder: (BuildContext context, int index) {
-                          final datum =
-                              controller.equipmentListModel.data?[index];
-                          print('data from home screen = $datum');
-                          if (datum != null) {
-                            return InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => ItemDetailsScreen(
-                                            datum.eqipmentName,
-                                            datum.description,
-                                            datum.image,
-                                            "",
-                                            datum.price)));
-                              },
-                              child: ItemCard(
-                                title: datum.eqipmentName ?? '',
-                                imageUrl: datum.image ?? '',
-                                price: datum.price ?? 0.0,
-                                quantity: datum.qty ?? 0,
-                              ),
-                            );
-                          } else {
-                            return SizedBox(); // Placeholder or loading indicator
-                          }
-                        },
-                      ),
-                    ))),
+              builder: (context, controller, child) =>
+                  controller.isLoading == true
+                      ? Center(
+                          child: CircularProgressIndicator(),
+                        )
+                      : Padding(
+                          padding: EdgeInsets.all(devHeight * 0.01),
+                          child: GridView.builder(
+                            itemCount: controller.equipmentListModel.data?.length,
+                            shrinkWrap: true,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                    childAspectRatio: .70,
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: devHeight * .008,
+                                    mainAxisSpacing: devWidth * 0.02),
+                            itemBuilder: (BuildContext context, int index) {
+                              final datum =
+                                  controller.equipmentListModel.data?[index];
+                              print('data from home screen = $datum');
+                              if (datum != null) {
+                                return InkWell(
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemDetailsScreen(datum.eqipmentName, datum.description, datum.image, "", datum.price)));
+                                    },
+                                  child: ItemCard(
+                                    title: datum.eqipmentName ?? '',
+                                    imageUrl: datum.image ?? '',
+                                    price: datum.price ?? 0.0,
+                                    quantity: datum.qty ?? 0,
+                                  ),
+                                );
+                              } else {
+                                return SizedBox(); // Placeholder or loading indicator
+                              }
+                            },
+                          ),
+                        ))),
     );
   }
 }

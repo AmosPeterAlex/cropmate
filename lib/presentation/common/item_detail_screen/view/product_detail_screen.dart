@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app_config/app_config.dart';
+import '../../buy_now_screen/view/buy_now_screen.dart';
 
 class ItemDetailsScreen extends StatefulWidget {
   final String? title;
@@ -32,12 +33,12 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(CupertinoIcons.cart_badge_plus),
-            )
-          ],
+          // actions: [
+          //   IconButton(
+          //     onPressed: () {},
+          //     icon: Icon(CupertinoIcons.cart_badge_plus),
+          //   )
+          // ],
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -132,7 +133,19 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                       height: devHeight * 0.03,
                     ),
                     MaterialButtonWidget(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BuyNowScreen(
+                              imageUrl: media,
+                              title: widget.title!,
+                              price: totalPrice,
+                              quantity: widget.quantity,
+                            ),
+                          ),
+                        );
+                      },
                       buttonColor: ColorConstants.primaryColor,
                       buttonText: "Buy now",
                     )
