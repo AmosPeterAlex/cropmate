@@ -16,16 +16,12 @@ class AgrEqpManagementScreen extends StatefulWidget {
 }
 
 class _AgrEqpManagementScreenState extends State<AgrEqpManagementScreen> {
-  // const AgrEqpManagementScreen({super.key});
   var equipmentNameController = TextEditingController();
-
   var priceController = TextEditingController();
-
   var qtyController = TextEditingController();
-
   var brandController = TextEditingController();
-
   File? image;
+  bool _switchValue = true;
 
   Future<void> _getImage(ImageSource source) async {
     final pickedFile = await ImagePicker().pickImage(source: source);
@@ -65,61 +61,87 @@ class _AgrEqpManagementScreenState extends State<AgrEqpManagementScreen> {
                 hintText: 'Brand',
                 controller: brandController,
               ),
-              Align(
+              Padding(
+                padding: const EdgeInsets.only(left: 12),
+                child: Row(
+                  children: [
+                    Text(
+                      _switchValue ? 'Available' : 'Not Available',
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    Switch(
+                      activeColor: ColorConstants.primaryColor,
+                      value: _switchValue,
+                      onChanged: (value) {
+                        setState(() {
+                          _switchValue = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 5),
+                child: Align(
+                  alignment: Alignment.bottomLeft,
                   child: Text(
                     '\tAdd Equipment Image',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 18),
                   ),
-                  alignment: Alignment.bottomLeft),
-              SizedBox(
-                height: 10,
+                ),
               ),
+              SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   ImageIconButton(
-                      width: devWidth * .35,
-                      height: devHeight * .06,
-                      onPressed: () => _getImage(ImageSource.camera),
-                      icon: Icons.camera_alt_outlined,
-                      label: 'Camera'),
+                    width: devWidth * .35,
+                    height: devHeight * .06,
+                    onPressed: () => _getImage(ImageSource.camera),
+                    icon: Icons.camera_alt_outlined,
+                    label: 'Camera',
+                  ),
                   ImageIconButton(
-                      width: devWidth * .35,
-                      height: devHeight * .06,
-                      onPressed: () => _getImage(ImageSource.gallery),
-                      icon: Icons.photo,
-                      label: 'Gallery'),
+                    width: devWidth * .35,
+                    height: devHeight * .06,
+                    onPressed: () => _getImage(ImageSource.gallery),
+                    icon: Icons.photo,
+                    label: 'Gallery',
+                  ),
                 ],
               ),
-              image != null
-                  ? Container(
-                      margin: EdgeInsets.symmetric(vertical: 20),
-                      height: 200,
-                      width: 200,
-                      child: Image.file(
-                        image!,
-                        fit: BoxFit.cover,
-                      ),
-                    )
-                  : SizedBox(),
-              SizedBox(
-                height: 15,
-              ),
+              if (image != null)
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 20),
+                  height: 200,
+                  width: 200,
+                  child: Image.file(
+                    image!,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              SizedBox(height: 15),
               MaterialButtonWidget(
-                  buttonText: 'Add Equipment',
-                  onPressed: () {
-                    Provider.of<AgrEqpAddController>(context, listen: false)
-                        .onEqpAdd(
-                            eqpName: equipmentNameController.text,
-                            price: priceController.text,
-                            quantity: qtyController.text,
-                            brand: brandController.text);
-                    equipmentNameController.clear();
-                    priceController.clear();
-                    qtyController.clear();
-                    brandController.clear();
-                  },
-                  buttonColor: ColorConstants.primaryColor),
+                buttonText: 'Add Equipment',
+                onPressed: () async {
+                  Provider.of<AgrEqpAddController>(context, listen: false)
+                      .onEqpAdd(
+                    eqpName: equipmentNameController.text,
+                    price: priceController.text,
+                    quantity: qtyController.text,
+                    brand: brandController.text,
+                    isAvail: "true",
+                    image: image, // Pass the image
+                  );
+                  equipmentNameController.clear();
+                  priceController.clear();
+                  qtyController.clear();
+                  brandController.clear();
+                },
+                buttonColor: ColorConstants.primaryColor,
+              ),
             ],
           ),
         ),
