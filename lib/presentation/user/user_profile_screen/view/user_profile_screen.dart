@@ -1,6 +1,7 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/farmer_widgets/Profile_listtile.dart';
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
+import 'package:cropmate/presentation/common/reset_password_screen/view/reset_password_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../common/govt_scheme_screen/view/govt_scheme_screen.dart';
@@ -38,18 +39,12 @@ class UserProfileScreen extends StatelessWidget {
             onTileClick: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => GovtSchemeScreen())),
           ),
-          // ProfileListTile(
-          //   text: "Soil Analysis and Crop Recommendation",
-          //   icon: Icon(Icons.view_agenda),
-          //   onTileClick: () => Navigator.of(context).push(
-          //       MaterialPageRoute(builder: (context) => SoilAnalysisScreen())),
-          // ),
-          // ProfileListTile(
-          //   text: "Feedback",
-          //   icon: Icon(Icons.feedback_rounded),
-          //   onTileClick: () => Navigator.of(context).push(
-          //       MaterialPageRoute(builder: (context) => UpdateProfileScreen())),
-          // ),
+          ProfileListTile(
+            text: "Reset Password",
+            icon: Icon(Icons.view_agenda),
+            onTileClick: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => ResetPasswordScreen())),
+          ),
           ProfileListTile(
               text: "Logout",
               icon: Icon(Icons.logout),
