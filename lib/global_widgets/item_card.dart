@@ -44,7 +44,6 @@ class ItemCard extends StatelessWidget {
           Container(
             height: devHeight * 0.2,
             decoration: BoxDecoration(
-                color: Colors.red,
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
                     image: NetworkImage(media), fit: BoxFit.cover)),
@@ -67,9 +66,9 @@ class ItemCard extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("$price/"),
+                  Text("₹ $price"),
                   Text(
-                    "$quantity",
+                    "Available: $quantity",
                   ),
                 ],
               ),
@@ -79,18 +78,18 @@ class ItemCard extends StatelessWidget {
               //   ),
               //   scrollDirection: Axis.horizontal,
               // ),
-              MaterialButton(
-                color: ColorConstants.primaryColor,
-                onPressed: () {
-                  // context
-                  //     .read<UserHarvestedItemScreenController>()
-                  //     .addToList(item!);
-                },
-                child: Text(
-                  "ADD TO CART",
-                  style: TextStyle(color: ColorConstants.whiteColor),
-                ),
-              ),
+              // MaterialButton(
+              //   color: ColorConstants.primaryColor,
+              //   onPressed: () {
+              //     // context
+              //     //     .read<UserHarvestedItemScreenController>()
+              //     //     .addToList(item!);
+              //   },
+              //   child: Text(
+              //     "ADD TO CART",
+              //     style: TextStyle(color: ColorConstants.whiteColor),
+              //   ),
+              // ),
             ],
           )
         ],

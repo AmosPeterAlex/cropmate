@@ -8,7 +8,7 @@ class SoilAnalysisService {
       var decodedData = await ApiHelper.postData(
           endPoint: "cropmapp/crop-recommendation/",
           body: data,
-          finalurl: 'http://10.0.2.2:8000/cropmapp/crop-recommendation/');
+          finalUrl: 'http://10.0.2.2:8000/cropmapp/crop-recommendation/');
       // finalurl: 'http://127.0.0.1:8000/cropmapp/register/');
       // finalurl: 'http://10.11.0.236:8000/cropmapp/register/');
       var message = decodedData["data"];

@@ -24,14 +24,14 @@ class HomeScreen extends StatelessWidget {
             title: CropMateIconWidget(),
             centerTitle: true,
             toolbarHeight: devHeight * .1,
-            actions: [
-              IconButton(
-                  onPressed: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => cartScreen()));
-                  },
-                  icon: Icon(CupertinoIcons.cart_badge_plus))
-            ],
+            // actions: [
+            //   IconButton(
+            //       onPressed: () {
+            //         // Navigator.push(context,
+            //         //     MaterialPageRoute(builder: (context) => cartScreen()));
+            //       },
+            //       icon: Icon(CupertinoIcons.cart_badge_plus))
+            // ],
           ),
           body: Consumer<FarmerHomeScreenController>(
               builder: (context, controller, child) =>
@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                             shrinkWrap: true,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
-                                    childAspectRatio: .58,
+                                    childAspectRatio: .70,
                                     crossAxisCount: 2,
                                     crossAxisSpacing: devHeight * .008,
                                     mainAxisSpacing: devWidth * 0.02),

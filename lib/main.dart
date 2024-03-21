@@ -1,6 +1,7 @@
 import 'package:cropmate/presentation/admin/admin_login_screen/controller/admin_login_controller.dart';
 import 'package:cropmate/presentation/admin/agr_eqp_management_screen/controller/agr_eqp_management_controller.dart';
 import 'package:cropmate/presentation/admin/govt_scheme_management_screen/controller/govt_scheme_management_controller.dart';
+import 'package:cropmate/presentation/common/forgot_password_screen/controller/forgot_password_controller.dart';
 import 'package:cropmate/presentation/common/govt_scheme_screen/controller/govt_scheme_controller.dart';
 import 'package:cropmate/presentation/admin/user_management_screen/controller/user_management_controller.dart';
 import 'package:cropmate/presentation/common/login_screen/controller/login_screen_controller.dart';
@@ -61,7 +62,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => AgrEqpAddController()),
         ChangeNotifierProvider(create: (context) => SoilAnalysisController()),
         ChangeNotifierProvider(create: (context) => AddHarvestedItemController()),
-        ChangeNotifierProvider(create: (context)=> ViewProfileController())
+        ChangeNotifierProvider(create: (context)=> ViewProfileController()),
+        ChangeNotifierProvider(create: (context)=> ForgotPasswordController())
 
       ],
       child: MaterialApp(
