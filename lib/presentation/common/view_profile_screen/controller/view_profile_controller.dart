@@ -28,10 +28,11 @@ class ViewProfileController extends ChangeNotifier {
       log("id=$uId");
       log("$header");
       ViewProfileService.fetchProfile(uId, header).then((value) {
+        log("statuss${value["status"]}");
         if (value["status"] == 1) {
           profileModel = ProfileModel.fromJson(value["data"]);
-          isLoading = true;
-          log("$profileModel");
+          isLoading = false;
+          notifyListeners();
         } else {
           AppUtils.oneTimeSnackBar("view failed", context: context);
         }
@@ -39,6 +40,7 @@ class ViewProfileController extends ChangeNotifier {
       notifyListeners();
     });
   }
+
 
   Future<String?> fetchProfileDetails() async {
     prefs = await SharedPreferences.getInstance();
