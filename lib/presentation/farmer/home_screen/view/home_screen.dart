@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cropmate/presentation/farmer/home_screen/controller/Home_screen_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +59,8 @@ class HomeScreen extends StatelessWidget {
                               if (datum != null) {
                                 return InkWell(
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemDetailsScreen(datum.eqipmentName, datum.description, datum.image, "", datum.price)));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemDetailsScreen(datum.eqipmentName?? "", datum.description??"", datum.image??"", "", datum.price??0)));
+                                    log("${datum.eqipmentName}\n${datum.description}\n${datum.image}\n${datum.price}");
                                     },
                                   child: ItemCard(
                                     title: datum.eqipmentName ?? '',
