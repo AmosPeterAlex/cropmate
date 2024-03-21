@@ -1,4 +1,7 @@
+import 'package:cropmate/global_widgets/admin_widgets/management_card.dart';
+import 'package:cropmate/global_widgets/view_profile_screen_widget.dart';
 import 'package:cropmate/presentation/common/view_profile_screen/controller/view_profile_controller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,6 +26,8 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var devHeight = MediaQuery.of(context).size.height;
+    var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title:
@@ -30,23 +35,41 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
         centerTitle: true,
       ),
       body: Consumer<ViewProfileController>(builder: (context, controller, _) {
-        return controller.isLoading==true
+        return controller.isLoading == true
             ? Center(child: CircularProgressIndicator())
             : Center(
                 child: Container(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("name  :${controller.profileModel.data?.username}"),
-                      Text("Email  :${controller.profileModel.data?.email}"),
-                      Text("Phone  :${controller.profileModel.data?.phone}"),
+                      SizedBox(
+                        height: 15,
+                      ),
                       Text(
-                        "Address  :${controller.profileModel.data?.address}",
+                        "Name        :${controller.profileModel.data?.username}",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      Text(
+                        "Email         :${controller.profileModel.data?.email}",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      Text(
+                        "Phone        :${controller.profileModel.data?.phone}",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      Text(
+                        "Location    :${controller.profileModel.data?.location}",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      Text(
+                        "Address     :${controller.profileModel.data?.address},",
+                        style: TextStyle(fontSize: 25),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      Text(
-                          "Location  :${controller.profileModel.data?.location}"),
+
+                      // ViewProfileWidget(value: "${controller.profileModel.data?.location}", id: "Location")
+                      // ManagementCard(name: "Name", email: "${controller.profileModel.data?.email}", onCardClick: (){})
                     ],
                   ),
                 ),
