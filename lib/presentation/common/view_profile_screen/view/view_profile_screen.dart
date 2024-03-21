@@ -16,7 +16,7 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
     super.initState();
   }
 
-  fetchData(context) {
+  fetchData(BuildContext context) {
     Provider.of<ViewProfileController>(context, listen: false)
         .fetchProfileData(context);
   }
@@ -29,26 +29,28 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
             Text("View Profile", style: TextStyle(fontWeight: FontWeight.bold)),
         centerTitle: true,
       ),
-      body: Consumer<ViewProfileController>(
-          builder: (context, controller, child) {
-        return Center(
-          child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text("name  :name"),
-                Text("Email  :name"),
-                Text("Phone  :name"),
-                Text(
-                  "Address  :name",
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+      body: Consumer<ViewProfileController>(builder: (context, controller, _) {
+        return controller.isLoading==true
+            ? Center(child: CircularProgressIndicator())
+            : Center(
+                child: Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text("name  :${controller.profileModel.data?.username}"),
+                      Text("Email  :${controller.profileModel.data?.email}"),
+                      Text("Phone  :${controller.profileModel.data?.phone}"),
+                      Text(
+                        "Address  :${controller.profileModel.data?.address}",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                          "Location  :${controller.profileModel.data?.location}"),
+                    ],
+                  ),
                 ),
-                Text("Location  :name"),
-              ],
-            ),
-          ),
-        );
+              );
       }),
     );
   }
