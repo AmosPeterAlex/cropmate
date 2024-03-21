@@ -31,22 +31,6 @@ class UserHarvestedItemScreen extends StatelessWidget {
               fontWeight: FontWeight.w600),
           toolbarHeight: devWidth * .25,
           title: CropMateIconWidget(),
-          actions: [
-            Padding(
-              padding: EdgeInsets.all(devHeight * 0.01),
-              child: IconButton(
-                onPressed: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => cartScreen()));
-                },
-                icon: Icon(
-                  CupertinoIcons.cart,
-                ),
-              ),
-            )
-          ],
         ),
         body: Consumer<UserHarvestedItemScreenController>(
             builder: (context, controller, child) {
