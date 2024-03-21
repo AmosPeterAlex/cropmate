@@ -1,12 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class MaterialButtonWidget extends StatelessWidget {
   final String? buttonText;
   final Color? buttonColor;
   final VoidCallback? onPressed;
+  final File? img;
 
   MaterialButtonWidget(
-      {super.key, this.buttonText, this.buttonColor, this.onPressed});
+      {super.key, this.buttonText, this.buttonColor, this.onPressed, this.img});
 
   @override
   Widget build(BuildContext context) {
