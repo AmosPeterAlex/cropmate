@@ -36,37 +36,26 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
             create: (context) => BottomNavigationController()),
+        ChangeNotifierProvider(create: (context) => UserBottomNavController()),
         ChangeNotifierProvider(
-          create: (context) => UserBottomNavController(),
-        ),
+            create: (context) => FarmerHomeScreenController()),
         ChangeNotifierProvider(
-          create: (context) => FarmerHomeScreenController(),
-        ),
+            create: (context) => UserHarvestedItemScreenController()),
+        ChangeNotifierProvider(create: (context) => LoginScreenController()),
         ChangeNotifierProvider(
-          create: (context) => UserHarvestedItemScreenController(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => LoginScreenController(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => RegistrationScreenController(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => AdminLoginController(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => GovtSchemeController(),
-        ),
+            create: (context) => RegistrationScreenController()),
+        ChangeNotifierProvider(create: (context) => AdminLoginController()),
+        ChangeNotifierProvider(create: (context) => GovtSchemeController()),
         ChangeNotifierProvider(create: (context) => UserManagementController()),
         ChangeNotifierProvider(
             create: (context) => GovtSchemeManagementController()),
         ChangeNotifierProvider(create: (context) => AgrEqpAddController()),
         ChangeNotifierProvider(create: (context) => SoilAnalysisController()),
-        ChangeNotifierProvider(create: (context) => AddHarvestedItemController()),
-        ChangeNotifierProvider(create: (context)=> ViewProfileController()),
-        ChangeNotifierProvider(create: (context)=> ForgotPasswordController()),
-        ChangeNotifierProvider(create: (context)=> ResetPasswordController())
-
+        ChangeNotifierProvider(
+            create: (context) => AddHarvestedItemController()),
+        ChangeNotifierProvider(create: (context) => ViewProfileController()),
+        ChangeNotifierProvider(create: (context) => ForgotPasswordController()),
+        ChangeNotifierProvider(create: (context) => ResetPasswordController())
       ],
       child: MaterialApp(
         home: SplashScreen(),
