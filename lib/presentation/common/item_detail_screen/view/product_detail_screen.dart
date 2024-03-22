@@ -63,19 +63,19 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      widget.title!,
+                      widget.title??"",
                       style: TextStyle(
                           fontSize: devHeight * 0.04,
                           fontWeight: FontWeight.w700),
                     ),
                     Text(
-                      widget.description!,
+                      widget.description??"",
                       style: TextStyle(
                         fontSize: devHeight * 0.03,
                       ),
                     ),
                     Text(
-                      widget.sourceName!,
+                      widget.sourceName??"",
                       style: TextStyle(
                         fontSize: devHeight * 0.02,
                       ),
@@ -106,7 +106,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                           icon: Icon(Icons.remove),
                         ),
                         Text(
-                          "${widget.quantity}",
+                          "${widget.quantity??""}",
                           style: TextStyle(
                             fontSize: devHeight * 0.03,
                           ),

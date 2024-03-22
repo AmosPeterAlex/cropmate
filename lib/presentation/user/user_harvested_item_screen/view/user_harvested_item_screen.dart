@@ -54,12 +54,15 @@ class UserHarvestedItemScreen extends StatelessWidget {
                       log('data from user harvester screen = $datum');
                       if (datum != null) {
                         return InkWell(
-                          onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ItemDetailsScreen(datum.data?.cropName, datum.data?.description, datum.data?.image,  datum.data?.postedBy, datum.data?.price),
-                            ),
-                          ),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ItemDetailsScreen(datum.data?.cropName?? "", datum.data?.description?? "", datum.data?.image?? "",  datum.data?.postedBy?? "", datum.data?.price??0),
+                              ),
+                            );
+                            log("${datum.data?.cropName}\n${datum.data?.description}\n${datum.data?.image}\n${datum.data?.postedBy}\n${datum.data?.price}");
+                          },
                           child: ItemCard(
                             title: datum.data?.cropName ?? '',
                             imageUrl: datum.data?.image ?? '',
