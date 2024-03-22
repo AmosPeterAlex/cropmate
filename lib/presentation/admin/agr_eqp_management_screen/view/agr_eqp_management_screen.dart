@@ -52,10 +52,12 @@ class _AgrEqpManagementScreenState extends State<AgrEqpManagementScreen> {
               TextFieldScreen(
                 hintText: 'Price',
                 controller: priceController,
+                keyBoardType: TextInputType.number,
               ),
               TextFieldScreen(
                 hintText: 'Quantity',
                 controller: qtyController,
+                keyBoardType: TextInputType.number,
               ),
               TextFieldScreen(
                 hintText: 'Brand',
