@@ -38,7 +38,7 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
         return controller.isLoading == true
             ? Center(child: CircularProgressIndicator())
             : Center(
-                child: Container(
+                child: Container(padding: EdgeInsets.only(left: 10,right: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

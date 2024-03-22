@@ -1,7 +1,9 @@
 import 'dart:math';
 
 import 'package:cropmate/core/constants/color_constants.dart';
+import 'package:cropmate/presentation/common/govt_scheme_screen/controller/govt_scheme_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class GovtSchemeCard extends StatelessWidget {
   final String title;
@@ -55,9 +57,13 @@ class GovtSchemeCard extends StatelessWidget {
                 InkWell(
                   child: Text(
                     link,
-                    style: TextStyle(fontStyle: FontStyle.italic,color: Colors.blue),
+                    style: TextStyle(
+                        fontStyle: FontStyle.italic, color: Colors.blue),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Provider.of<GovtSchemeController>(context, listen: false)
+                        .launchURL(link);
+                  },
                 ),
                 Text(
                   description,
