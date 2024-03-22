@@ -96,7 +96,7 @@ class _SoilAnalysisScreenState extends State<SoilAnalysisScreen> {
                   context: context,
                 );
                 nCont.clear();
-                phCont.clear();
+                pCont.clear();
                 kCont.clear();
                 tempCont.clear();
                 humidityCont.clear();
