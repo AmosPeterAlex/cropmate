@@ -17,7 +17,8 @@ class UserHarvestedItemScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
     var devWidth = MediaQuery.of(context).size.width;
-    Provider.of<UserHarvestedItemScreenController>(context,listen: false).fetchProduct();
+    Provider.of<UserHarvestedItemScreenController>(context, listen: false)
+        .fetchProduct();
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -34,7 +35,6 @@ class UserHarvestedItemScreen extends StatelessWidget {
         ),
         body: Consumer<UserHarvestedItemScreenController>(
             builder: (context, controller, child) {
-
           return controller.isLoading == true
               ? Center(
                   child: CircularProgressIndicator(),
@@ -58,7 +58,12 @@ class UserHarvestedItemScreen extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ItemDetailsScreen(datum.data?.cropName?? "", datum.data?.description?? "", datum.data?.image?? "",  datum.data?.postedBy?? "", datum.data?.price??0),
+                                builder: (context) => ItemDetailsScreen(
+                                    datum.data?.cropName ?? "",
+                                    datum.data?.description ?? "",
+                                    datum.data?.image ?? "",
+                                    datum.data?.postedBy ?? "",
+                                    datum.data?.price ?? 0),
                               ),
                             );
                             log("${datum.data?.cropName}\n${datum.data?.description}\n${datum.data?.image}\n${datum.data?.postedBy}\n${datum.data?.price}");
