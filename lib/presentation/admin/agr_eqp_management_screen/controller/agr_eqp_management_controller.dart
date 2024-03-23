@@ -1,45 +1,3 @@
-/*
-import 'dart:io';
-
-import 'package:cropmate/repository/api/admin/agr_eqp_management/service/agr_eqp_management_service.dart';
-import 'package:flutter/material.dart';
-
-class AgrEqpAddController extends ChangeNotifier {
-  void onEqpAdd(
-      {required String eqpName,
-      required String price,
-      required String quantity,
-      required String brand,
-      required String isAvail,
-        File? image
-      // required String link,
-      }) {
-    var data = {
-      "equipment_name": eqpName,
-      "price": price,
-      "qty": quantity,
-      "Brand": brand,
-      "is_available": isAvail,
-      "image": image
-
-      // "link": link,
-    };
-    AgrEqpManagementService.postEqp(data).then((decodedData) {
-      print("success i.e status ==1");
-      if (decodedData["status"] == 1) {
-        print("Equipment Added Successfully");
-      } else {
-        var message = "error in api";
-        print(message);
-        // AppUtils.oneTimeSnackBar(message, context: context);
-      }
-    });
-  }
-}
-
-
- */
-
 import 'dart:convert';
 import 'dart:io';
 
@@ -81,14 +39,11 @@ class AgrEqpAddController extends ChangeNotifier {
         if (decodedData["status"] == 1) {
           // Equipment added successfully
           print("Equipment Added Successfully");
-          // print(" iiiifffff${response.body}");
-          // return decodedData;
+        
         } else {
           // Handle error in API response
           var message = "Error in API";
           print(message);
-          // print("elseeeeeee${response.body}");
-          // return decodedData;
         }
       } else {
         // Image upload failed
@@ -125,21 +80,11 @@ class AgrEqpAddController extends ChangeNotifier {
       );
     }
 
-    if (brand != null) {
-      request.fields['Brand'] = brand;
-    }
-    if (eqpName != null) {
-      request.fields['eqipment_name'] = eqpName;
-    }
-    if (price != null) {
+    request.fields['Brand'] = brand;
+    request.fields['eqipment_name'] = eqpName;
       request.fields['price'] = price;
-    }
-    if (quantity != null) {
       request.fields['qty'] = quantity;
-    }
-    // if (description != null) {
-    //   request.fields['description'] = description;
-    // }
+     
     request.fields['is_available'] = isAvail;
 
     request.headers.addAll(headers);

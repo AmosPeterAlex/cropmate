@@ -1,13 +1,8 @@
-import 'dart:developer';
-
 import 'package:cropmate/presentation/farmer/home_screen/controller/Home_screen_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../../../global_widgets/crop_mate_icon_widget.dart';
 import '../../../../global_widgets/item_card.dart';
-import '../../../common/cart_screen/view/cart_screen.dart';
 import '../../../common/item_detail_screen/view/product_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {

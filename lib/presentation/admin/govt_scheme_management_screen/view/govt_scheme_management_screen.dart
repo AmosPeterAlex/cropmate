@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class GovtSchemeManagementScreen extends StatelessWidget {
-  // const GovtSchemeManagementScreen({super.key});
+   GovtSchemeManagementScreen({super.key});
   var schemeNameController = TextEditingController();
   var startAgeController = TextEditingController();
   var endAgeController = TextEditingController();
@@ -80,7 +80,7 @@ class GovtSchemeManagementScreen extends StatelessWidget {
               buttonColor: ColorConstants.primaryColor,
               buttonText: 'View Schemes',
               onPressed: () {
-                //navigate to admin govt scheme view
+                
                 Navigator.push(
                     context,
                     MaterialPageRoute(

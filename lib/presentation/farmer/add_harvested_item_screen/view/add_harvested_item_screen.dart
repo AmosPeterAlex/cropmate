@@ -158,10 +158,10 @@ class _AddHarvestedItemScreenState extends State<AddHarvestedItemScreen> {
               hintText: "Description",
               controller: descriptionController,
             ),
-            TextFieldScreen(
-              hintText: "Is available",
-              controller: isAvailableController,
-            ),
+            // TextFieldScreen(
+            //   hintText: "Is available",
+            //   controller: isAvailableController,
+            // ),
             MaterialButtonWidget(
               onPressed: () {
                 Provider.of<AddHarvestedItemController>(context, listen: false)
@@ -172,17 +172,15 @@ class _AddHarvestedItemScreenState extends State<AddHarvestedItemScreen> {
                   price: double.parse(priceController.text),
                   quantity: int.parse(quantityController.text),
                   description: descriptionController.text,
-                  // imageToAdd: image
-                  isAvailable: isAvailableController.text,
+                  isAvailable: "true",
                   image: image,
                 );
-                // createdByController.clear();
-                // cropTypeController.clear();
-                // cropNameController.clear();
-                // priceController.clear();
-                // quantityController.clear();
-                // descriptionController.clear();
-                // isAvailableController.clear();
+                createdByController.clear();
+                cropTypeController.clear();
+                cropNameController.clear();
+                priceController.clear();
+                quantityController.clear();
+                descriptionController.clear();
 
                 print("api add completed");
               },

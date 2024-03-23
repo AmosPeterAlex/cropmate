@@ -1,6 +1,5 @@
 import 'dart:convert'; // Required for JSON decoding
 import 'package:cropmate/app_config/app_config.dart';
-import 'package:cropmate/presentation/admin/home_screen/view/home_screen.dart';
 import 'package:cropmate/presentation/common/login_screen/view/login_screen.dart';
 import 'package:cropmate/presentation/farmer/bottom_navigation_screen/view/bottom_navigation_screen.dart';
 import 'package:cropmate/presentation/user/user_bottom_navigation_screen/view/user_bottom_nav_screen.dart';

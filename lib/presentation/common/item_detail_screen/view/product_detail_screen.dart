@@ -1,6 +1,5 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app_config/app_config.dart';

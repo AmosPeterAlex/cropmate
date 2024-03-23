@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/presentation/common/govt_scheme_screen/controller/govt_scheme_controller.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +24,7 @@ class GovtSchemeAdminCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
-    var devWidth = MediaQuery.of(context).size.width;
+   
     return Padding(
       padding: EdgeInsets.only(left: 12, right: 12, bottom: 4),
       child: SizedBox(

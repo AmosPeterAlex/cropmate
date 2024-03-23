@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';

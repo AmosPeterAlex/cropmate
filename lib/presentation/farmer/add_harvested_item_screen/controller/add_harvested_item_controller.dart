@@ -21,16 +21,8 @@ class AddHarvestedItemController extends ChangeNotifier {
     try {
       // Upload image
       var imageUrl = "${AppConfig.baseUrl}cropmapp/farmerproducts/";
-      var response = await onUpload(
-          imageUrl,
-          image,
-          createdBy,
-          cropType,
-          cropName,
-          price,
-          quantity,
-          description,
-          isAvailable);
+      var response = await onUpload(imageUrl, image, createdBy, cropType,
+          cropName, price, quantity, description, isAvailable);
 
       if (response.statusCode == 200 || response.statusCode == 201) {
         var imageUrlFromServer = json.decode(response.body)["image"];
@@ -51,13 +43,13 @@ class AddHarvestedItemController extends ChangeNotifier {
         if (decodedData["status"] == 1) {
           // Equipment added successfully
           print("Equipment Added Successfully");
-          print(" iiiifffff${response.body}");
+
           // return decodedData;
         } else {
           // Handle error in API response
           var message = "Error in API";
           print(message);
-          print("elseeeeeee${response.body}");
+
           // return decodedData;
         }
       } else {
@@ -123,29 +115,3 @@ class AddHarvestedItemController extends ChangeNotifier {
     return await http.Response.fromStream(res);
   }
 }
-/*
-    sajins working code with error only in image uploadding
-    var data = {
-      "crop_type": cropType,
-      "crop_name": cropName,
-      "price": price.toString(),
-      "quantity": quantity.toString(),
-      "description": description,
-      "posted_by": createdBy,
-      "is_available": isAvailable,
-      // "image": imgurl
-    };
-
-    AddHarvestedItemService.postHarvestedData(data).then((decodedData) {
-      // print("success i.e status ==1");
-      if (decodedData["status"] == 1) {
-        print("adding  success\n i.e status ==1");
-      } else {
-        var message = "error in api";
-        print(message);
-      }
-    });
-      }
-}
-
-    */
