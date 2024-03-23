@@ -7,9 +7,7 @@ import 'package:flutter/material.dart';
 import '../../../common/govt_scheme_screen/view/govt_scheme_screen.dart';
 import '../../../common/view_profile_screen/view/view_profile_screen.dart';
 
-
 class UserProfileScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
@@ -24,11 +22,8 @@ class UserProfileScreen extends StatelessWidget {
           SizedBox(
             height: devHeight * 0.03,
           ),
-          // Expanded(
-          //   child: profilecard(text: text, actions: actions, icon: icon, devHeight: devHeight),
-          // ),
           ProfileListTile(
-            text: "Update profile",
+            text: "View profile",
             icon: Icon(Icons.person),
             onTileClick: () => Navigator.of(context).push(
                 MaterialPageRoute(builder: (context) => ViewProfileScreen())),
@@ -95,7 +90,7 @@ class UserProfileScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       LoginScreenController().logout(context);
-                     // Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                      // Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(

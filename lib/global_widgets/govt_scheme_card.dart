@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/presentation/common/govt_scheme_screen/controller/govt_scheme_controller.dart';
 import 'package:flutter/material.dart';
@@ -42,14 +40,14 @@ class GovtSchemeCard extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      startAge,
+                      "Start age- ${startAge}",
                       style: TextStyle(fontStyle: FontStyle.italic),
                     ),
                     SizedBox(
                       width: devWidth * 0.02,
                     ),
                     Text(
-                      endAge,
+                      " End Age-${endAge}",
                       style: TextStyle(fontStyle: FontStyle.italic),
                     ),
                   ],

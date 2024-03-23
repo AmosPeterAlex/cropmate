@@ -2,7 +2,6 @@ import 'package:cropmate/core/constants/image_constants.dart';
 import 'package:cropmate/global_widgets/admin_widgets/management_grid.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/presentation/admin/admin_login_screen/controller/admin_login_controller.dart';
-import 'package:cropmate/presentation/admin/admin_login_screen/view/admin_login_screen.dart';
 import 'package:cropmate/presentation/admin/agr_eqp_management_screen/view/agr_eqp_management_screen.dart';
 import 'package:cropmate/presentation/admin/farmer_management_screen/view/farmer_management_screen.dart';
 import 'package:cropmate/presentation/admin/govt_scheme_management_screen/view/govt_scheme_management_screen.dart';

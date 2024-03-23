@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/presentation/admin/admin_login_screen/view/admin_login_screen.dart';
 import 'package:cropmate/presentation/common/forgot_password_screen/view/forgot_password_screen.dart';
@@ -7,7 +5,6 @@ import 'package:cropmate/presentation/common/login_screen/controller/login_scree
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
 import 'package:cropmate/global_widgets/textfield.dart';
-import 'package:cropmate/repository/api/admin/service/admin_login_service.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -37,10 +34,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   PopupMenuItem(
                       onTap: () {
                         checkTokenAndNavigate(context);
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => AdminLoginScreen()));
                       },
                       child: Text('Login as Admin'))
                 ]))
@@ -50,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: ListView(children: [
           Column(
             children: [
-              CropMateIconWidget(), //refactored widget, stack oke used
+              CropMateIconWidget(),
               ListTile(
                 leading: Text(
                   "Log in",
@@ -72,7 +65,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.topRight,
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgotPasswordScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ForgotPasswordScreen()));
                   },
                   child: Text('Forgot Password?',
                       style: TextStyle(
@@ -111,8 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: InkWell(
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) =>
-                                    RegistrationScreen()));
+                                builder: (context) => RegistrationScreen()));
                           },
                           child: Text(
                             '\tCreate Account',

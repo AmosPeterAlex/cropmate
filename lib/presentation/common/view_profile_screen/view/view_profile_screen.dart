@@ -1,7 +1,4 @@
-import 'package:cropmate/global_widgets/admin_widgets/management_card.dart';
-import 'package:cropmate/global_widgets/view_profile_screen_widget.dart';
 import 'package:cropmate/presentation/common/view_profile_screen/controller/view_profile_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -38,7 +35,8 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
         return controller.isLoading == true
             ? Center(child: CircularProgressIndicator())
             : Center(
-                child: Container(padding: EdgeInsets.only(left: 10,right: 10),
+                child: Container(
+                  padding: EdgeInsets.only(left: 10, right: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -67,9 +65,6 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-
-                      // ViewProfileWidget(value: "${controller.profileModel.data?.location}", id: "Location")
-                      // ManagementCard(name: "Name", email: "${controller.profileModel.data?.email}", onCardClick: (){})
                     ],
                   ),
                 ),
