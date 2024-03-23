@@ -1,15 +1,16 @@
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
+
 class ManagementCard extends StatelessWidget {
   final String name;
-  final String phoneNumber;
+  final String email;
   final VoidCallback onCardClick;
 
   const ManagementCard({
     super.key,
     required this.name,
-    required this.phoneNumber,
+    required this.email,
     required this.onCardClick,
   });
 
@@ -25,7 +26,7 @@ class ManagementCard extends StatelessWidget {
           child: ListTile(
             onTap: onCardClick,
             title: Text('Name: $name'),
-            subtitle: Text('Ph No: $phoneNumber'),
+            subtitle: Text('Ph No: $email'),
           ),
         ),
       ),

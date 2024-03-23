@@ -1,14 +1,12 @@
 import 'package:cropmate/core/constants/image_constants.dart';
-import 'package:cropmate/global_widgets/admin_widgets/feedback_card.dart';
 import 'package:cropmate/global_widgets/admin_widgets/management_grid.dart';
 import 'package:cropmate/global_widgets/crop_mate_icon_widget.dart';
+import 'package:cropmate/presentation/admin/admin_login_screen/controller/admin_login_controller.dart';
 import 'package:cropmate/presentation/admin/agr_eqp_management_screen/view/agr_eqp_management_screen.dart';
 import 'package:cropmate/presentation/admin/farmer_management_screen/view/farmer_management_screen.dart';
 import 'package:cropmate/presentation/admin/govt_scheme_management_screen/view/govt_scheme_management_screen.dart';
 import 'package:cropmate/presentation/admin/user_management_screen/view/user_management_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/constants/color_constants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,13 +14,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
-    var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: devWidth * .2,
+        toolbarHeight: devHeight * .14,
         title: CropMateIconWidget(),
         centerTitle: true,
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.logout))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                AdminLoginController().logout(context);
+              },
+              icon: Icon(Icons.logout))
+        ],
       ),
       body: GridView.count(
         childAspectRatio: .8,

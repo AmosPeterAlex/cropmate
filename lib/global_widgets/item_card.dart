@@ -1,7 +1,8 @@
+import 'package:cropmate/app_config/app_config.dart';
 import 'package:cropmate/core/constants/color_constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import '../repository/api/common/cart_page/model/cart_page_modal.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({
@@ -11,6 +12,9 @@ class ItemCard extends StatelessWidget {
     this.imageUrl,
     this.contant,
     this.sourceName,
+    this.price,
+    this.quantity,
+    this.item,
   });
 
   final String? title;
@@ -18,11 +22,15 @@ class ItemCard extends StatelessWidget {
   final String? imageUrl;
   final String? contant;
   final String? sourceName;
+  final double? price;
+  final int? quantity;
+  final Items? item;
 
   @override
   Widget build(BuildContext context) {
     var devHeight = MediaQuery.of(context).size.height;
-    var devWidth = MediaQuery.of(context).size.width;
+
+    final media = AppConfig.mediaurl + imageUrl!;
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -33,11 +41,9 @@ class ItemCard extends StatelessWidget {
           Container(
             height: devHeight * 0.2,
             decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(10),
-              // image: DecorationImage(
-              //     image: NetworkImage(""), fit: BoxFit.cover)
-            ),
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                    image: NetworkImage(media), fit: BoxFit.cover)),
           ),
           SizedBox(
             height: 10,
@@ -49,32 +55,19 @@ class ItemCard extends StatelessWidget {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Text(
-                  "title",
+                  title!,
                   style: TextStyle(
                       fontSize: devHeight * 0.02, fontWeight: FontWeight.w600),
                 ),
               ),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Price/"),
+                  Text("₹ $price"),
                   Text(
-                    "Quantity",
+                    "Available: $quantity",
                   ),
                 ],
-              ),
-              SingleChildScrollView(
-                child: Text(
-                  "from",
-                ),
-              scrollDirection: Axis.horizontal,),
-              MaterialButton(
-                color: ColorConstants.primaryColor,
-                onPressed: () {},
-                child: Text(
-                  "ADD TO CART",
-                  style: TextStyle(color: ColorConstants.whiteColor),
-                ),
               ),
             ],
           )
