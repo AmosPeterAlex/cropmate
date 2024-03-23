@@ -52,8 +52,7 @@ class HomeScreen extends StatelessWidget {
                               if (datum != null) {
                                 return InkWell(
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemDetailsScreen(datum.eqipmentName?? "", datum.description??"", datum.image??"", "", datum.price??0)));
-                                    log("${datum.eqipmentName}\n${datum.description}\n${datum.image}\n${datum.price}");
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ItemDetailsScreen(datum.eqipmentName??"", datum.description??"", datum.image??"", "", datum.price??0)));
                                     },
                                   child: ItemCard(
                                     title: datum.eqipmentName ?? '',

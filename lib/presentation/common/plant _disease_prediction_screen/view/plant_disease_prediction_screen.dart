@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:cropmate/app_config/app_config.dart';
 import 'package:cropmate/core/constants/color_constants.dart';
 import 'package:cropmate/global_widgets/image_icon_button.dart';
 import 'package:cropmate/global_widgets/matterial_button_widget.dart';
@@ -52,7 +53,7 @@ class _PlantDiseasePredictionScreenState
 
   Future<void> _predictDisease() async {
     try {
-      var imageUrl = "http://10.11.0.227:8000/cropmapp/predict/";//apputils pinne use chyanm
+      var imageUrl = "${AppConfig.baseUrl}cropmapp/predict/";
 
       // Check if an image is selected
       if (_selectedImage == null) {
@@ -178,7 +179,7 @@ class _PlantDiseasePredictionScreenState
               onPressed: _predictDisease,
               buttonText: 'Predict Disease',
               buttonColor:
-                  ColorConstants.primaryColor, // Set your desired button color
+                  ColorConstants.primaryColor,
             ),
           ],
         ),
